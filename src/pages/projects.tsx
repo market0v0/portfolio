@@ -10,7 +10,7 @@ const Projects: React.FC<ProjectsProps> = ({ instru }) => {
   const controls = useAnimation()
 
   return (
-    <div className='h-screen w-[90%] py-10 pb-10  md:w-[77%]'>
+    <div className='h-screen w-[90%] py-10 pb-20  md:w-[77%]'>
       <div className={`py-6${instru ? 'absolute top-0' : ''}`}>
         <span className='text-[1.2rem] font-[400]'>
           SOME OF MY PERSNAL <span className='text-[#D28738]'>PROJECTS</span>
