@@ -54,7 +54,7 @@ const Skill: React.FC = () => {
   })
   const [ref1, inView1] = useInView({
     triggerOnce: false,
-    threshold: 0.8
+    threshold: 0.1
   })
   return (
     <div className='w-[90%] py-10 md:w-[77%]'>
@@ -87,7 +87,7 @@ const Skill: React.FC = () => {
       </div>
 
       <motion.div
-        className='grid grid-cols-1 items-center justify-center gap-10 py-0 lg:grid-cols-2  lg:items-start lg:py-[6rem]'
+        className='grid h-screen grid-cols-1 items-center justify-center gap-10 py-0 lg:grid-cols-2  lg:items-start lg:py-[6rem]'
         ref={ref1}
         initial='hidden'
         animate={inView1 ? 'visible' : 'hidden'}
