@@ -24,7 +24,7 @@ const Projects: React.FC<ProjectsProps> = ({ instru }) => {
         {projectsdata.map((project, index) => (
           <motion.div
             key={index}
-            className='snap-center'
+            className='snap-start'
             initial='hidden'
             animate={controls}
             transition={{ duration: 0.5 }}

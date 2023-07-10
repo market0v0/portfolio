@@ -68,7 +68,7 @@ const Resume: React.FC = () => {
           `}
         </style>
         <div className='  w-[90%] break-words pt-[9rem] md:w-[70%]'>
-          <div className='grid w-[90%] grid-cols-1 items-start md:grid-cols-[70%_30%] '>
+          <div className='grid w-[90%] grid-cols-1 items-center  md:grid-cols-[70%_30%] md:items-start '>
             <div className='pb-2 text-[3rem] font-[500] leading-[3rem] md:pb-0'>
               Mark Vincent A. Cueva
             </div>
