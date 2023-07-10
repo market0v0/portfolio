@@ -1,13 +1,10 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import LanguageCard from '@/components/languageCard'
 import { Technologies } from './api/data'
 
 const Skill: React.FC = () => {
-  const handleClick = () => {
-    window.location.href = '/destination-page#target-element'
-  }
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

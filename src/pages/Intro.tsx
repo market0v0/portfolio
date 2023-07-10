@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const IntroFrame: React.FC = () => {
-  const [showScrollText, setShowScrollText] = useState(true)
+  const showScrollText = true
 
   const scrollDown = (): void => {
     window.scrollBy({ top: window.innerHeight + 120, behavior: 'smooth' })
@@ -29,8 +29,8 @@ const IntroFrame: React.FC = () => {
           <div className='w-[95%] text-[0.7rem] font-[400] leading-6 tracking-[0.025rem] lg:text-[1.25rem]  lg:leading-[2.5rem] '>
             I am currently residing in the Philippines, I am a passionate individual dedicated to
             exploring these possibilities. My main objective is to gain valuable job experience and
-            continuously improve myself. I eagerly accept project offers and job opportunities.
-            Let's kickstart your online presence and make your mark in the digital world!
+            continuously improve myself. I eagerly accept project offers and job opportunities. Lets
+            kickstart your online presence and make your mark in the digital world!
           </div>
           <div className='pt-10'>
             <button className='border-2'>

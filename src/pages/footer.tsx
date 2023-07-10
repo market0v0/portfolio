@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const Footer: React.FC = () => {
-  const [showScrollText, setShowScrollText] = useState(true)
+  const showScrollText = true
 
   const scrollUp = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <div className='text-[1.7rem] font-[600] text-[#D28738]'> GET IN TOUCH</div>
         <div className='py-6 text-[1.2rem] font-[400]'>Let’s talk about it!</div>
         <div className='tracking-4 pb-10 text-[0.9rem] font-[300] leading-[2rem] md:w-[45%]'>
-          Feel free to send an email regarding any freelance or job opportunities. If you're
+          Feel free to send an email regarding any freelance or job opportunities. If you are
           interested, reach out via email so we can further discuss.
         </div>
 

@@ -15,7 +15,7 @@ const Mainframe: React.FC = () => {
     const images = document.querySelectorAll('img')
     let loadedCount = 0
 
-    const handleImageLoad = () => {
+    const handleImageLoad = (): void => {
       loadedCount++
       if (loadedCount === images.length) {
         setLoading(false)
