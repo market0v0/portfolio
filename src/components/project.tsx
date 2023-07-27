@@ -5,7 +5,7 @@ import { type ProjectData } from '@/pages/api/data'
 
 const Project: React.FC<ProjectData> = projectSpec => {
   return (
-    <div className='grid min-h-screen w-[100%] grid-cols-1 place-items-center gap-6  text-[0.8rem] font-[300] text-white  lg:grid-cols-2 lg:text-[1rem] '>
+    <div className='grid min-h-[80vh] w-[100%] grid-cols-1 place-items-center gap-6  text-[0.8rem] font-[300] text-white  lg:grid-cols-2 lg:text-[1rem] '>
       <div className='justify-self-center'>
         <img src={projectSpec.img} alt='project' width='550' height='100%' />
       </div>

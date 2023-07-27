@@ -56,7 +56,7 @@ const Mainframe: React.FC = () => {
 
   const [ref1, inView1] = useInView({
     triggerOnce: false,
-    threshold: 0.7
+    threshold: 0.1
   })
 
   const [ref2, inView2] = useInView({

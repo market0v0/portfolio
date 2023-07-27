@@ -15,7 +15,7 @@ const Profile: React.FC = () => {
   }, [controls, inView])
 
   return (
-    <div className='min-h-screen w-[90%] py-10 md:w-[77%]'>
+    <div className='min-h-screen w-[90%] py-20 md:w-[77%]'>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
