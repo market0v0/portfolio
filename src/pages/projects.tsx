@@ -13,7 +13,7 @@ const Projects: React.FC<ProjectsProps> = ({ instru }) => {
     <div className='h-full w-[90%] py-10 pb-[40rem]  md:w-[77%]'>
       <div className={`py-6${instru ? 'absolute top-0' : ''}`}>
         <span className='text-[1.2rem] font-[400]'>
-          SOME OF MY PERSNAL <span className='text-[#D28738]'>PROJECTS</span>
+          SOME OF MY PERSONAL <span className='text-[#D28738]'>PROJECTS</span>
         </span>
       </div>
       <div className={'grid h-full  items-center justify-center '}>
