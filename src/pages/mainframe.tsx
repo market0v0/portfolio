@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import IntroFrame from './Intro'
@@ -7,36 +7,10 @@ import NavBar from '@/components/navbar'
 import Projects from './projects'
 import Profile from './profile'
 import Footer from './footer'
+import AnimatedSection from '@/components/PageAnimation'
+import ColorSection from '@/components/PageColor'
 
 const Mainframe: React.FC = () => {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const images = document.querySelectorAll('img')
-    let loadedCount = 0
-
-    const handleImageLoad = (): void => {
-      loadedCount++
-      if (loadedCount === images.length) {
-        setLoading(false)
-      }
-    }
-
-    images.forEach(image => {
-      if (image.complete) {
-        handleImageLoad()
-      } else {
-        image.addEventListener('load', handleImageLoad)
-      }
-    })
-
-    return () => {
-      images.forEach(image => {
-        image.removeEventListener('load', handleImageLoad)
-      })
-    }
-  }, [])
-
   const skillsetVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -49,34 +23,15 @@ const Mainframe: React.FC = () => {
     }
   }
 
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.5
-  })
-
   const [ref1, inView1] = useInView({
     triggerOnce: false,
     threshold: 0.1
   })
 
-  const [ref2, inView2] = useInView({
-    triggerOnce: false,
-    threshold: 0.9
-  })
-
   return (
     <div className='min-h-screen bg-black text-white'>
-      {loading && <div className='loader'>Loading...</div>}
-
-      <div className='sticky top-0 z-20'>
-        <NavBar />
-      </div>
-
       <div>
         <div
-          className={`font-poppins max-w-screen  snap-y snap-proximity bg-black${
-            inView1 ? 'min-h-screen overflow-y-auto' : 'min-h-full'
-          }${inView2 ? 'min-h-screen overflow-y-auto' : 'min-h-full'}`}
           style={{
             background: inView1 ? 'rgba(0, 0, 0, 0.60)' : "url('mainbackground.svg')",
             backgroundSize: 'cover',
@@ -84,37 +39,26 @@ const Mainframe: React.FC = () => {
             backgroundRepeat: 'no-repeat'
           }}
         >
+          {' '}
+          <div className='sticky top-0 z-20'>
+            <NavBar />
+          </div>
           <style>
             {`
             ::-webkit-scrollbar {
-              width: .5rem;
+              width: .1rem;
             }
             ::-webkit-scrollbar-track {
               background: rgba(0, 0, 0, 0.60);
             }
           `}
           </style>
-
-          <motion.div
-            className='flex min-h-full  justify-center py-10'
-            style={{
-              background: "url('intro.svg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
-            ref={ref}
-            initial='hidden'
-            animate={inView ? 'visible' : 'hidden'}
-            variants={skillsetVariants}
-          >
+          <AnimatedSection>
             <IntroFrame />
-          </motion.div>
-
-          <div className='z-10 flex min-h-full justify-center'>
-            <Skill />
-          </div>
-
+          </AnimatedSection>
+          <AnimatedSection>
+            <Profile />
+          </AnimatedSection>
           <motion.div
             className={'flex min-h-full snap-start justify-center bg-[#0000007b]'}
             ref={ref1}
@@ -122,24 +66,19 @@ const Mainframe: React.FC = () => {
             animate={inView1 ? 'visible' : 'hidden'}
             variants={skillsetVariants}
           >
-            <Projects instru={inView1} />
+            <div>
+              {' '}
+              <Skill />
+            </div>
           </motion.div>
-
-          <div className='flex min-h-full  justify-center '>
-            <Profile />
-          </div>
+          <ColorSection>
+            <Projects />
+          </ColorSection>
+          <ColorSection>
+            <Footer />
+          </ColorSection>
         </div>
       </div>
-
-      <motion.div
-        className='flex min-h-full snap-start justify-center bg-[#000000] '
-        ref={ref2}
-        initial='hidden'
-        animate={inView2 ? 'visible' : 'hidden'}
-        variants={skillsetVariants}
-      >
-        <Footer />
-      </motion.div>
     </div>
   )
 }
