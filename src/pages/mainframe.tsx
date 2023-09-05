@@ -11,29 +11,12 @@ import AnimatedSection from '@/components/PageAnimation'
 import ColorSection from '@/components/PageColor'
 
 const Mainframe: React.FC = () => {
-  const skillsetVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: -10,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut'
-      }
-    }
-  }
-
-  const [ref1, inView1] = useInView({
-    triggerOnce: false,
-    threshold: 0.1
-  })
-
   return (
-    <div className='min-h-screen bg-black text-white'>
+    <div className='min-h-screen bg-[#050716] text-white'>
       <div>
         <div
           style={{
-            background: inView1 ? 'rgba(0, 0, 0, 0.60)' : "url('mainbackground.svg')",
+            background: "url('mainbackground.svg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
@@ -59,18 +42,9 @@ const Mainframe: React.FC = () => {
           <AnimatedSection>
             <Profile />
           </AnimatedSection>
-          <motion.div
-            className={'flex min-h-full snap-start justify-center bg-[#0000007b]'}
-            ref={ref1}
-            initial='hidden'
-            animate={inView1 ? 'visible' : 'hidden'}
-            variants={skillsetVariants}
-          >
-            <div>
-              {' '}
-              <Skill />
-            </div>
-          </motion.div>
+          <div>
+            <Skill />
+          </div>
           <ColorSection>
             <Projects />
           </ColorSection>
