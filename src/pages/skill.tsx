@@ -44,7 +44,7 @@ const Skill: React.FC = () => {
           animate={inView1 ? 'visible' : 'hidden'}
           variants={skillsetVariants}
         >
-          <div className='border-b-2 border-[#ffffff5a]  pb-[10rem] lg:border-b-0 lg:pb-0'>
+          <div className='border-b-2 border-[#ffffff5a]  pb-[0] lg:border-b-0 lg:pb-[6rem]'>
             <div className='text-[.9rem] font-[400] text-[#D28738] md:text-[1.2rem]'>
               MY SKILLSET
             </div>
@@ -59,7 +59,7 @@ const Skill: React.FC = () => {
             </div>
           </div>
 
-          <div className='pb-10 text-[.9rem] font-[400] leading-[2rem] md:w-[95%] lg:text-[1rem]  lg:leading-[2.5rem]'>
+          <div className='pb-[5rem] text-[.9rem] font-[400] leading-[2rem] md:w-[95%] lg:text-[1rem]  lg:leading-[2.5rem]'>
             I am a BSIT student with a foundation in programming using several languages such as
             Python, Java, TypeScript, JavaScript, and C. This also includes popular libraries such
             as React and frameworks for frontend development like Bootstrap and Tailwind. Moreover,
