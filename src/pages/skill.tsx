@@ -38,7 +38,7 @@ const Skill: React.FC = () => {
         </div>
 
         <motion.div
-          className='grid h-screen grid-cols-1 items-center  justify-center gap-10 py-0 lg:grid-cols-2  lg:items-start lg:py-[10rem]'
+          className='grid h-screen grid-cols-1 items-center justify-center  py-[10rem]   lg:grid-cols-2  lg:items-start lg:py-[12rem]'
           ref={ref1}
           initial='hidden'
           animate={inView1 ? 'visible' : 'hidden'}
@@ -48,7 +48,7 @@ const Skill: React.FC = () => {
             <div className='text-[.9rem] font-[400] text-[#D28738] md:text-[1.2rem]'>
               MY SKILLSET
             </div>
-            <div className='break-words py-[1rem] text-[2rem] font-[600] leading-[2.5rem] md:w-[90%] lg:py-[3rem] lg:text-[4.375rem] lg:leading-[5rem]'>
+            <div className='w-[90%] break-words py-[1rem] text-[3rem] font-[600] leading-[3.5rem] md:w-[90%] lg:py-[3rem] lg:text-[4.375rem] lg:leading-[5rem]'>
               Full stack web developer, IT technician & Mobile developer
             </div>
             <div
@@ -59,7 +59,7 @@ const Skill: React.FC = () => {
             </div>
           </div>
 
-          <div className='pb-[5rem] text-[.9rem] font-[400] leading-[2rem] md:w-[95%] lg:text-[1rem]  lg:leading-[2.5rem]'>
+          <div className='pb-[10rem] text-[.9rem] font-[400] leading-[2rem] md:w-[95%] lg:text-[1rem]  lg:leading-[2.5rem]'>
             I am a BSIT student with a foundation in programming using several languages such as
             Python, Java, TypeScript, JavaScript, and C. This also includes popular libraries such
             as React and frameworks for frontend development like Bootstrap and Tailwind. Moreover,
