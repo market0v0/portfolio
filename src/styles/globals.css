@@ -30,6 +30,7 @@
 .animate-fade-in {
   animation: fade-in 0.3s ease-in;
 }
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

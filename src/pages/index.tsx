@@ -1,5 +1,5 @@
 import React from 'react'
-import Mainframe from './mainframe'
+import Mainframe from '../components/mainframe'
 
 const Home: React.FC = () => {
   return (

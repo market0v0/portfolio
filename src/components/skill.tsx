@@ -5,10 +5,6 @@ import { useInView } from 'react-intersection-observer'
 import TechGrid from '@/components/cardholder'
 
 const Skill: React.FC = () => {
-  const scrollDown = (): void => {
-    window.scrollBy({ top: window.innerHeight + 120, behavior: 'smooth' })
-  }
-
   const skillsetVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -51,12 +47,7 @@ const Skill: React.FC = () => {
             <div className='w-[90%] break-words py-[1rem] text-[2rem] font-[600] leading-[2rem] md:w-[90%] lg:py-[3rem] lg:text-[4.375rem] lg:leading-[5rem]'>
               Full stack web developer, IT technician & Mobile developer
             </div>
-            <div
-              className='smooth-bounce animate-bounce cursor-pointer text-[.9rem] font-[400] text-[#D28738] underline hover:text-[#fff] md:text-[1.2rem]'
-              onClick={scrollDown}
-            >
-              VIEW WORKS
-            </div>
+
           </div>
 
           <div className='pb-[10rem] text-[.8rem] font-[400] leading-[2rem] md:w-[95%] lg:text-[1rem]  lg:leading-[2.5rem]'>

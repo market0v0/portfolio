@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import NavBar from '@/components/navbar'
-import Footer from './footer'
+import Footer from '../components/footer'
 
 const Resume: React.FC = () => {
   const skillsetVariants = {
@@ -29,7 +29,7 @@ const Resume: React.FC = () => {
         alert('COPIED!')
         console.log('Text copied to clipboard:', textToCopy)
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Unable to copy text:', error)
       })
   }
@@ -77,26 +77,34 @@ const Resume: React.FC = () => {
                 className='w-[100%] cursor-pointer border-2 bg-[#ffffff1c] hover:border-[#D28738]'
                 onClick={handleDownloadResume}
               >
-                <p className='cursor-pointer p-2 px-1 lg:px-10'>DOWNLOAD RESUME</p>
+                <p className='cursor-pointer p-2 px-1 lg:px-10'>
+                  DOWNLOAD RESUME
+                </p>
               </button>
             </div>
           </div>
           <div className='grid w-[100%] grid-cols-1 gap-10 py-10 pb-10 pt-10  tracking-[.1rem] md:grid-cols-[60%_40%]'>
             <div>
-              <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>PROFILE</div>
+              <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>
+                PROFILE
+              </div>
               <div className='text-[1rem] leading-[2rem]'>
-                I am a passionate individual with a dedication to exploring the vast opportunities
-                in the tech industry, particularly in web development. I am eager to gain real job
-                experience and grow through continuous self-improvement. As I am approaching the end
-                of my university days, in the final year of my Bachelor of Science in Information
-                Technology program, I have built a solid foundation in coding. I have experience
-                working with various frameworks in frontend, backend, and full-stack development.
-                Furthermore, I have also acquired skills in UI/UX design and received technical
-                administrative training.
+                I am a passionate individual with a dedication to exploring the
+                vast opportunities in the tech industry, particularly in web
+                development. I am eager to gain real job experience and grow
+                through continuous self-improvement. As I am approaching the end
+                of my university days, in the final year of my Bachelor of
+                Science in Information Technology program, I have built a solid
+                foundation in coding. I have experience working with various
+                frameworks in frontend, backend, and full-stack development.
+                Furthermore, I have also acquired skills in UI/UX design and
+                received technical administrative training.
               </div>
             </div>
             <div className='break-words md:px-10'>
-              <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>CONTACTS</div>
+              <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>
+                CONTACTS
+              </div>
               <div className='cursor-pointer pt-2'>
                 <div className='flex py-2 text-[.8rem] leading-[2rem]'>
                   <span>
@@ -133,7 +141,12 @@ const Resume: React.FC = () => {
                 </div>
                 <div className='flex py-2 text-[.8rem] leading-[2rem]'>
                   <span>
-                    <img src='/location.svg' alt='icon' width='30' height='100%' />
+                    <img
+                      src='/location.svg'
+                      alt='icon'
+                      width='30'
+                      height='100%'
+                    />
                   </span>
                   <span className='px-2 text-[#D28738] '>
                     <a
@@ -150,13 +163,17 @@ const Resume: React.FC = () => {
               </div>
             </div>
             <div>
-              <div className=' text-[1.875rem] font-[500] tracking-[.2rem]'>EDUCATION</div>
+              <div className=' text-[1.875rem] font-[500] tracking-[.2rem]'>
+                EDUCATION
+              </div>
               <div className=' tracking-[.1rem]'>
                 <div className='pb-4'>
-                  <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>COLLEGE</div>
+                  <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
+                    COLLEGE
+                  </div>
                   <p className='leading-10 text-white'>
-                    Cebu Institute of Technology - University 2020 - present Estimated Graduation
-                    year: 2024
+                    Cebu Institute of Technology - University 2020 - present
+                    Estimated Graduation year: 2024
                   </p>
                 </div>
                 <div className='pb-4'>
@@ -179,10 +196,14 @@ const Resume: React.FC = () => {
             </div>
           </div>
           <div>
-            <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>SKILLS</div>
+            <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>
+              SKILLS
+            </div>
             <div className=' grid w-[100%] grid-cols-1 text-[1rem] leading-[2rem] tracking-[.1rem] md:w-[50%] md:grid-cols-2'>
               <div>
-                <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>SOFT SKILLS</div>
+                <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
+                  SOFT SKILLS
+                </div>
                 <ul className=' list-disc px-6'>
                   <li>Proficient in Canva</li>
                   <li>Adoptive</li>
@@ -193,7 +214,9 @@ const Resume: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>Industry Skills</div>
+                <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
+                  Industry Skills
+                </div>
                 <ul className='list-disc px-6'>
                   <li>Next.js/tailwind</li>
                   <li>ReactTS/JS</li>
@@ -206,7 +229,9 @@ const Resume: React.FC = () => {
             </div>
           </div>
           <div className='pt-10'>
-            <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>EXPERTIES</div>
+            <div className='text-[1.875rem] font-[500] tracking-[.2rem]'>
+              EXPERTISE
+            </div>
             <div className='grid w-[100%] grid-cols-2 gap-6 text-center text-[1rem] leading-[2rem] tracking-[.1rem] md:w-[100%] md:grid-cols-3 lg:grid-cols-4'>
               <div className=''>
                 <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
@@ -214,7 +239,9 @@ const Resume: React.FC = () => {
                 </div>
                 <div className='text-center'>
                   <div className='text-[1rem] font-[200]'>AVERAGE</div>
-                  <div className='text-[.8rem] font-[200]'>SPRING - EXPRESS - DERBY- SQLITE</div>
+                  <div className='text-[.8rem] font-[200]'>
+                    SPRING - EXPRESS - DERBY- SQLITE
+                  </div>
                 </div>
               </div>
               <div>
@@ -222,7 +249,9 @@ const Resume: React.FC = () => {
                   FRONTEND DEVELOPMENT
                 </div>
                 <div className='text-[1rem] font-[200]'>INTERMEDIATE</div>
-                <div className='text-[.8rem] font-[200]'>NEXT - TAILWIND - REACT - BOOTSTRAP</div>
+                <div className='text-[.8rem] font-[200]'>
+                  NEXT - TAILWIND - REACT - BOOTSTRAP
+                </div>
               </div>
               <div>
                 <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
@@ -234,7 +263,9 @@ const Resume: React.FC = () => {
                 </div>
               </div>
               <div>
-                <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>TROUBLESHOOTING</div>
+                <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
+                  TROUBLESHOOTING
+                </div>
                 <div className='text-[1rem] font-[200]'>AVERAGE</div>
                 <div className='text-[.8rem] font-[200]'>
                   VIRUTAL MACHINE - HARDWARE - BIOS DNS SERVER - DOMAIN
