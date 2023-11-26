@@ -178,7 +178,7 @@ const Resume: React.FC = () => {
                 </div>
                 <div className='pb-4'>
                   <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
-                    SENIOR HIGHSCHOLL
+                    SENIOR HIGHSCHOOL
                   </div>
                   <p className='leading-10 text-white'>
                     City of Bogo Science and Arts Academy 2018-2020
@@ -186,7 +186,7 @@ const Resume: React.FC = () => {
                 </div>
                 <div className='pb-4'>
                   <div className='pb-2 text-[1.2rem] font-[500] text-[#D28738]'>
-                    JUNIOR HIGHSCHOLL
+                    JUNIOR HIGHSCHOOL
                   </div>
                   <p className='leading-10 text-white'>
                     St. Louise de Marillac College of Bogo 2014 - 2018
