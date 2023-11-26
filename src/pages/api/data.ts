@@ -36,7 +36,7 @@ export const projectsdata: ProjectData[] = [
     tech: 'NEXT - REACT - MYSQL - SPRING - JAVA EE',
     desc: 'MarkChat is a user-friendly chat system that enables instant messaging between registered users. Built with TypeScript and Next.js for the frontend, and backed by Java and Spring Boot for the backend.',
     repository: 'https://github.com/market0v0/assesmentChat',
-    title: 'MARCK CHAT'
+    title: 'MARK CHAT'
   },
   {
     img: '/projects/oneblood.svg',
