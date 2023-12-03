@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import NavigationButtons from './NavBtn'
 
-const CustomDropdown: React.FC = () => {
+interface NavigationProps {
+  onButtonClick: () => void
+}
+const CustomDropdown: React.FC<NavigationProps> = ({ onButtonClick }) => {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement | null>(null)
 
@@ -12,24 +15,27 @@ const CustomDropdown: React.FC = () => {
   const closeDropdown = (event: MouseEvent): void => {
     if ((dropdownRef.current != null) && !dropdownRef.current.contains(event.target as Node)) {
       setIsOpen(false)
+      onButtonClick()
     }
   }
 
-  const handleButtonClick = (): void => {
+  const handleButtonClick = (): any => {
     setIsOpen(!isOpen)
   }
 
   useEffect(() => {
     document.addEventListener('click', closeDropdown)
-
     return () => {
       document.removeEventListener('click', closeDropdown)
     }
   }, [])
 
   return (
-    <div className='relative' ref={dropdownRef}>
-      <div className='cursor-pointer' onClick={toggleDropdown}>
+    <div className='relative' ref={dropdownRef} >
+      <div className='cursor-pointer' onClick={() => {
+        toggleDropdown()
+        onButtonClick() // Call the callback when a button is clicked
+      }}>
         <img src='/hamburger.svg' alt='project' width='20' height='100%' />
       </div>
       {isOpen && (

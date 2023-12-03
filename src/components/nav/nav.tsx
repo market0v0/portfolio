@@ -42,8 +42,8 @@ const Navigation: React.FC = () => {
            <NavigationButtons onButtonClick={() => { setWidthContracted(true) }} />
           </div>
           <div className='flex sm:hidden'>
-            <div onClick={() => { setWidthContracted(!widthContracted) }}>
-            <Hamburger/>
+            <div onClick={() => { setWidthContracted(false) }}>
+            <Hamburger onButtonClick={() => { setWidthContracted(true) }} />
             </div>
 
           </div>
