@@ -1,16 +1,21 @@
 import React from 'react'
+import AnimatedSection from '../PageAnimation'
 
 const Profile: React.FC = () => {
   return (
-    <div className='flex min-h-full justify-center'>
-      <div className='min-h-screen w-[90%] py-20 md:w-[77%]'>
-        <div className='grid min-h-[100%] w-[100%] grid-cols-1 place-items-center gap-7  text-[.8rem] font-[300] text-white  lg:grid-cols-2 lg:text-[1rem]'>
-          <div className='justify-self-center'>
-            <img src='/profile.svg' alt='project' width='550' height='100%' />
+    <AnimatedSection>
+    <div className='flex flex-col z-10 items-center min-h-screen justify-center' id="profile">
+      <div className=' w-[90%]  sm:w-[60%]'>
+        <div className='grid min-w-10  bg-bgcolor lg:px-8 px-4 py-4 lg:py-8 rounded-xl grid-cols-1 place-items-center gap-2  text-[.8rem] border-2 border-slate-900 font-[300] text-white  lg:grid-cols-2 lg:text-[1rem]'>
+
+          <div className='justify-self-center '>
+
+            <img src='/profile.svg' alt='project' width='450' height='100%' className='sm:rounded-none rounded-sm'/>
+
           </div>
-          <div className='grid items-start text-white'>
-            <div className='text-[1rem] font-[450] lg:text-[2rem]'>WHO IS MARK?</div>
-            <div className='w-[98%] py-2 leading-[1.4rem] tracking-[0.02rem]  lg:w-[90%] lg:py-10 lg:leading-[2rem]'>
+          <div className='grid items-start '>
+            <div className='text-[1rem] text-primary font-[450] lg:text-[1.5rem]'>WHO IS MARK?</div>
+            <div className='w-[98%] py-2 text-[.6rem] sm:leading-[1rem] leading-[1.5rem] tracking-[0.02rem] lg:py-4 lg:w-[90%] xl:py-2  xl:leading-[2rem]'>
               <p>
                 {' '}
                 Mark Vincent A. Cueva is a graduating BSIT student from Cebu Institute of Technology
@@ -23,8 +28,8 @@ const Profile: React.FC = () => {
                 continuous self-improvement.
               </p>
             </div>
-            <div className='grid pb-10'>
-              <div className='pb-2 text-[#D28738]'>SOCIALS: </div>
+            <div className='grid '>
+              <div className='pb-2 text-primary'>SOCIALS: </div>
               <div className='flex gap-2'>
                 <a href='https://github.com/market0v0' target='_blank' rel='noreferrer'>
                   <img src='/github.svg' alt='icon' width='25' height='100%' />
@@ -41,7 +46,9 @@ const Profile: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className=' w-[90%]  sm:w-[60%]'></div>
     </div>
+    </AnimatedSection>
   )
 }
 

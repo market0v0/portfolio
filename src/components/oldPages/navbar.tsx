@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import OutlineButton from '../outlineButton'
 
 const NavBar: React.FC = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -11,7 +12,7 @@ const NavBar: React.FC = () => {
       setPrevScrollPos(currentScrollPos)
     }
 
-    handleScroll() // Call the function on initial render to handle the initial scroll position
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
 
     return () => {
@@ -34,12 +35,11 @@ const NavBar: React.FC = () => {
           <div onClick={() => (window.location.href = '/')} className='cursor-pointer'>
             <img src='/logomark.svg' alt='project' width='100' height='100%' />
           </div>
-          <div className='flex items-center gap-6 justify-self-end py-2 text-[0.73rem] font-[300] hover:text-[#D28738] lg:gap-10 lg:text-[0.93rem]'>
-            <button className='cursor-pointer border-2 hover:border-[#D28738]'>
-              <p className='cursor-pointer p-2 px-1 lg:px-10' onClick={scrollDownToBottom}>
-                GET IN TOUCH
-              </p>
-            </button>
+          <div className='flex items-center gap-6 justify-self-end py-2 text-[0.73rem] font-[300] lg:gap-10 lg:text-[0.93rem]' onClick={scrollDownToBottom}>
+            <div className='cursor-pointer hover:border-0 border-2 border-white' >
+            <OutlineButton buttontext={'GET IN TOUCH'}/>
+
+            </div>
           </div>
         </div>
       </div>

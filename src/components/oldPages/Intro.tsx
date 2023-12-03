@@ -2,6 +2,7 @@ import CursorAnimation from '@/components/CursorEffect'
 import TypingTitle from '@/components/TypeAnimation'
 
 import React from 'react'
+import OutlineButton from '../outlineButton'
 
 const IntroFrame: React.FC = () => {
   const titles = ['Web Developer', 'Technician', 'Full Stack Developer']
@@ -38,17 +39,21 @@ const IntroFrame: React.FC = () => {
               </span>
             </div>
             <div className='w-[95%] text-[.8rem] font-[400] leading-10 tracking-[0.025rem] lg:text-[1rem]  lg:leading-[2.2rem] '>
-              I am currently residing in the Philippines, I am a passionate individual dedicated to
-              exploring these possibilities. My main objective is to gain valuable job experience
-              and continuously improve myself. I eagerly accept project offers and job
+              I am currently residing in the Philippines, I am a passionate
+              individual dedicated to exploring these possibilities. My main
+              objective is to gain valuable job experience and continuously
+              improve myself. I eagerly accept project offers and job
               opportunities.
             </div>
             <div className='pt-20'>
-              <button className='border-2'>
-                <p className='p-2 px-8' onClick={() => (window.location.href = '/resume')}>
-                  VIEW RESUME
-                </p>
-              </button>
+              <div className='flex items-center justify-center lg:justify-start gap-6 justify-self-end py-2 text-[0.73rem] font-[300] lg:gap-10 lg:text-[0.93rem]'>
+                <div
+                  className='cursor-pointer border-2 border-white  hover:border-0'
+                  onClick={() => (window.location.href = '/resume')}
+                >
+                  <OutlineButton buttontext={'VIEW RESUME'} />
+                </div>
+              </div>
             </div>
           </div>
         </div>

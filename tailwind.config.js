@@ -11,6 +11,14 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+      },
+      fontFamily: {
+        'sans-typewriter': ['Lucida Sans Typewriter', 'sans-serif']
+      },
+      colors: {
+        primary: '#7E31F1',
+        secondary: '#E5F5F3',
+        bgcolor: '#0e021f96' // Change this to your desired color
       }
     }
   },

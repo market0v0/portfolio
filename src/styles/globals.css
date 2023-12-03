@@ -12,6 +12,35 @@
   height: 0.5rem;
 }
 
+.web-navigation-container {
+  transition: all 300ms ease-in-out;
+}
+
+.width-contracted {
+  width: 30rem !important; /* Use !important to override inline styles */
+}
+
+.width-expanded {
+  width: 60% !important; /* Use !important to override inline styles */
+}
+
+@keyframes blurAnimation {
+  from {
+    filter: blur(0px);
+  }
+  to {
+    filter: blur(5px); /* Adjust the amount of blur as needed */
+  }
+}
+
+.blur-container {
+  animation: blurAnimation 1s ease; /* Adjust the duration and timing function as needed */
+}
+.custom-dropdown {
+  background-color: black; /* Set the background color here */
+  /* Add other styles as needed */
+}
+
 .overflow-auto::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
@@ -30,7 +59,33 @@
 .animate-fade-in {
   animation: fade-in 0.3s ease-in;
 }
+::-webkit-scrollbar {
+  width: .1rem;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.60);
+}
 
+.scroll-container {
+  display: flex;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to the start of each child element */
+  width: 100vw; /* Set the container width to the viewport width */
+}
+
+/* Ensure each child element takes up the full viewport width */
+.scroll-container > * {
+  flex: 0 0 100vw;
+}
+body, html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+/* Optional: Add smooth scrolling */
+.scroll-container {
+  scroll-behavior: smooth;
+}
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

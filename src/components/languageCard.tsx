@@ -8,21 +8,20 @@ interface CardProps {
 const LanguageCard: React.FC<CardProps> = CardProps => {
   return (
     <div>
-      <div className=' flex overflow-hidden  '>
+      <div className=''>
         <div
-          className='h-[10.25rem] w-[100%] max-w-[30rem] flex-col bg-black  hover:shadow-xl  lg:h-[14.25rem]'
+          className='flex  items-center h-[8rem] sm:h-[10rem]  justify-center flex-col hover:shadow-xl  w-[90%]'
           style={{
             background: "url('" + CardProps.tech.img + "')",
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundPosition: 'center'
           }}
         >
-          <div className='  leading-[7rem]'>
-            <div className='pt-6   text-[8.25rem] font-[700] tracking-[-1rem] text-[#ffffff4f] opacity-40   md:text-[16.25rem]'>
+          <div className='  '>
+            <div className='pt-16   text-[6.5rem] font-[700] tracking-[-1rem] text-[#ffffff4f] opacity-40   sm:text-[10.25rem]'>
               {CardProps.num.toString().padStart(2, '0')}
             </div>
-            <div className=' font-poppins item-end text-center font-[600] text-[#ffffffcd] sm:text-[1.5rem]'>
+            <div className='font-poppins item-end text-center text-[.7rem] font-[600]  sm:text-[1rem]'>
               {CardProps.tech.techs}
             </div>
           </div>

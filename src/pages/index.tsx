@@ -1,10 +1,16 @@
+import { MyContextProvider } from '@/components/context/context'
+import Frame from '@/components/newPages/frame'
 import React from 'react'
-import Mainframe from '../components/mainframe'
 
 const Home: React.FC = () => {
   return (
-    <div className='font-poppins h-screen w-full'>
-      <Mainframe />
+    <div className='font-sans-typewriter text-secondary h-screen w-full'>
+      {/*       <Mainframe/> */}
+      <MyContextProvider>
+      <Frame/>
+      </MyContextProvider>
+
+      {/*  */}
     </div>
   )
 }

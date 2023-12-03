@@ -1,8 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import LanguageCard from '@/components/languageCard' // Import the LanguageCard component
+import LanguageCard from '@/components/languageCard'// Import the LanguageCard component
 import { useInView } from 'react-intersection-observer'
 import { Technologies } from '@/pages/api/data'
+import WaveCard from '../waveCard'
 const TechGrid: React.FC = () => {
   // Define your variants here, or you can pass them as props too
   const containerVariants = {
@@ -40,22 +41,25 @@ const TechGrid: React.FC = () => {
 
   return (
     <motion.div
-      className='grid grid-cols-3  items-center justify-center gap-2 pt-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7'
+      className='grid items-center justify-center gap-2 sm:pt-6 grid-cols-4 lg:gap-7'
       ref={ref}
       initial='hidden'
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
     >
-      {Array.from({ length: 9 }).map((techs, index) => (
+      {Array.from({ length: 8 }).map((techs, index) => (
         <motion.div
           key={index}
           variants={cardVariants}
-          className='rotate-45'
+          className='flex items-center   justify-center'
           ref={ref}
           initial='hidden'
           animate={inView ? 'visible' : 'hidden'}
         >
+          <WaveCard text={''} >
           <LanguageCard tech={Technologies[index]} num={index + 1} />
+
+          </WaveCard>
         </motion.div>
       ))}
     </motion.div>

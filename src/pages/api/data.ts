@@ -11,8 +11,7 @@ export const Technologies: Technology[] = [
   { img: '/skills/git.svg', techs: 'Git' },
   { img: '/skills/next.svg', techs: 'Next' },
   { img: '/skills/express.svg', techs: 'Express' },
-  { img: '/skills/spring.svg', techs: 'Spring' },
-  { img: '/skills/mongo.svg', techs: 'MongoDB' }
+  { img: '/skills/spring.svg', techs: 'Spring' }
 ]
 
 export interface ProjectData {
@@ -26,23 +25,57 @@ export interface ProjectData {
 export const projectsdata: ProjectData[] = [
   {
     img: '/projects/pinewood.svg',
-    tech: 'NODE - EXPRESS - EXPRESS - NEXT - MONGO',
-    desc: 'Pinewood Bikes Website is a personal project I developed to showcase various bike models categorized into three types: gravel, road, and mountain. The website is deployed using the Railway platform and utilizes EXPRESS as the backend framework. On the frontend, NEXT.js is employed to provide a seamless user experience. The database is hosted on MongoDB Atlas for efficient data management and storage.',
+    tech: 'NODE - EXPRESS - NEXTJS - MONGO',
+    desc: 'Developed a personal project showcasing gravel, road, and mountain bike models for the Pinewood brand, using Express for the backend, NEXT.js for the frontend, and MongoDB Atlas for efficient data management.',
     repository: 'https://github.com/market0v0/pinewood',
     title: 'PINEWOOD BIKE'
   },
   {
+    img: '/projects/bramk.svg',
+    tech: 'NODE - NEXTJS - GPT - MONGO - EXPRESS ',
+    desc: 'Contributed to the development of a customer support bot powered by OpenAI GPT, using TypeScript and Next.js for the frontend and Express for the backend. Played a significant role in data analytics features and GPT integration research.',
+    repository: 'https://github.com/ainderew/cap-client',
+    title: 'BRAMK'
+  },
+  {
     img: '/projects/markchat.svg',
-    tech: 'NEXT - REACT - MYSQL - SPRING - JAVA EE',
-    desc: 'MarkChat is a user-friendly chat system that enables instant messaging between registered users. Built with TypeScript and Next.js for the frontend, and backed by Java and Spring Boot for the backend.',
+    tech: 'NEXTJS - MYSQL - SPRING - JAVA EE',
+    desc: 'Created a user-friendly chat system for instant messaging among registered users, with TypeScript and Next.js for the frontend and Java and Spring Boot for the backend.',
     repository: 'https://github.com/market0v0/assesmentChat',
     title: 'MARK CHAT'
   },
   {
     img: '/projects/oneblood.svg',
     tech: 'DJANGO - BOOTSTARP - MYSQL - HTML5 ',
-    desc: 'One Blood is a web application that focuses on blood donations and transfusions. The application is designed to coordinate and manage the blood supply chain and is linked to hospitals and blood banks for seamless management. The web application is built using the Django framework, providing a robust and secure platform for efficient data management and user interaction.',
+    desc: 'Worked on a project focusing on blood donations and transfusions, specifically on the donation interaction side. Utilized the Django framework, HTML5, and Bootstrap for seamless coordination within the blood supply chain, linking hospitals and blood banks.',
     repository: 'https://github.com/market0v0/BloodBankSystem',
     title: 'ONE BLOOD'
+  }
+
+]
+export const trainingsData = [
+  {
+    img: 'aws.svg',
+    label: 'Zuitt AWS Services',
+    images: [],
+    date: '(Aug 2023 - Ongoing)',
+    body: 'Acquired in-depth knowledge of AWS serverless architecture, encompassing pivotal services such as S3, EC2, DynamoDB, Lambda, and API Gateway.'
+
+  },
+  {
+    img: 'javaee.svg',
+    label: 'Zuitt Backend Java EE',
+    images: [],
+    date: '(Jan 2023 - May 2023)',
+    body: 'Acquired in-depth knowledge of Java EE, Tomcat, Spring Boot, Maven, and security features, such as JWT tokens, for advanced backend development.'
+
+  },
+  {
+    img: 'ata.svg',
+    label: 'Accenture Technology Academy',
+    images: [],
+    date: '(Aug 2023 - Ongoing)',
+    body: 'Successfully completed Accentures Backend Development (BED) program, gaining proficiency in Git, Java Spring, testing, Maven, Java core, and Docker.'
+
   }
 ]

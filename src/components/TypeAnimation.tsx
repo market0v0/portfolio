@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import CursorAnimation from './CursorEffect'
 interface TypingTitleProps {
   titles: string[]
 }
@@ -49,7 +50,9 @@ const TypingTitle: React.FC<TypingTitleProps> = ({ titles }) => {
     }
   }, [isTyping, titleIndex])
 
-  return <span>{title}</span>
+  return <span>{title}<span className='font-thin'>
+  <CursorAnimation />
+</span></span>
 }
 
 export default TypingTitle
