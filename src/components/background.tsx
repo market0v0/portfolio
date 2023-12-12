@@ -18,7 +18,7 @@ const ParticleRing: React.FC<ParticleRingProps> = ({ children, active }) => {
   const rightColor = data ? '000917' : '9A9AB0' // Example color value, replace with your desired color
 
   return (
-    <div className='relative overflow-hidden' style={{ height: '100vh', width: '100%' }}>
+    <div className='relative ' style={{ height: '100vh', width: '100%' }}>
       <Canvas
         camera={{
           position: [-2, -12.5, -1.8]

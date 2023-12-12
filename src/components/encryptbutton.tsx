@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { type ReactNode, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const CYCLES_PER_LETTER = 2
@@ -8,9 +8,10 @@ const CHARS = 'IMYTINAMUCH'
 
 interface EncryptButtonProps {
   label: string
+  children?: ReactNode
 }
 
-const EncryptButton: React.FC<EncryptButtonProps> = ({ label }) => {
+const EncryptButton: React.FC<EncryptButtonProps> = ({ label, children }) => {
   const intervalRef = useRef<NodeJS.Timer | null>(null)
 
   const [text, setText] = useState(label)
@@ -45,7 +46,7 @@ const EncryptButton: React.FC<EncryptButtonProps> = ({ label }) => {
   }
 
   return (
-    <motion.button
+    <motion.div
       whileHover={{
         scale: 1.025
       }}
@@ -59,7 +60,7 @@ const EncryptButton: React.FC<EncryptButtonProps> = ({ label }) => {
       <div className="relative z-10 flex items-center gap-2">
         <span>{text}</span>
       </div>
-      <motion.span
+      <motion.div
         initial={{
           y: '100%'
         }}
@@ -74,7 +75,7 @@ const EncryptButton: React.FC<EncryptButtonProps> = ({ label }) => {
         }}
         className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-indigo-400/100 to-indigo-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
       />
-    </motion.button>
+    </motion.div>
   )
 }
 

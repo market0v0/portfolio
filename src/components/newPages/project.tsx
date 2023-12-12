@@ -9,7 +9,7 @@ const Project: React.FC<ProjectData> = (projectSpec) => {
   return (
     <div
       className='grid
-    grid-cols-1 items-center  justify-start sm:gap-2 gap-6  text-[0.8rem] font-[300]   lg:grid-cols-2 '
+    grid-cols-1 items-center  justify-start sm:gap-2 gap-6  text-[0.8rem] font-[300]   xl:grid-cols-2 '
     >
       <WaveCard text={''}>
         <div className='justify-self-center rounded-md' style={{}}>

@@ -32,7 +32,14 @@
     filter: blur(5px); /* Adjust the amount of blur as needed */
   }
 }
-
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.311);
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
+  }
+}
 .blur-container {
   animation: blurAnimation 1s ease; /* Adjust the duration and timing function as needed */
 }

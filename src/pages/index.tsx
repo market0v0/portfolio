@@ -4,7 +4,7 @@ import React from 'react'
 
 const Home: React.FC = () => {
   return (
-    <div className='font-sans-typewriter text-secondary h-screen w-full'>
+    <div className='font-poppine text-secondary h-screen w-full'>
       {/*       <Mainframe/> */}
       <MyContextProvider>
       <Frame/>

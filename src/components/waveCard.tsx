@@ -46,7 +46,7 @@ const WaveCard: React.FC<WaveCardProps> = ({ text, children }: WaveCardProps) =>
         rotateX,
         transformStyle: 'preserve-3d'
       }}
-      className="relative min-h-[10rem] w-full rounded-xl bg-gradient-to-br "
+      className="relative md:min-h-[20rem] min-h-[10rem] w-full rounded-xl "
     >
       <div
         style={{
@@ -55,13 +55,13 @@ const WaveCard: React.FC<WaveCardProps> = ({ text, children }: WaveCardProps) =>
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
-        className="absolute inset-4 grid place-content-center rounded-xl shadow-lg"
+        className="absolute inset-4 grid place-content-center rounded-xl"
       >
         <div
           style={{
             transform: 'translateZ(50px)'
           }}
-          className="from-indigo-500   to-violet-500 px-4 py-12 text-center text-2xl font-bold"
+          className="  font-bold"
         >
 
           {children}

@@ -7,6 +7,7 @@ export const scrollToSection = (id: string): any => {
   const section = document.getElementById(id)
   if (section != null) {
     section.scrollIntoView({ behavior: 'smooth' })
+    console.log(section)
   }
 }
 

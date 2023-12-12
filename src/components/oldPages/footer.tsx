@@ -6,9 +6,10 @@ import Contacts from '../nav/contaxt'
 const Footer: React.FC = () => {
   return (
     <AnimatedSection>
-    <div className='flex py-[10rem] min-w-full justify-center  ' id='footer'>
-      <div className=' w-[90%] flex iteams-center justify-center md:w-[77%] '>
-        <div className='flex  flex-col p-10 backdrop-blur-sm border-2 border-slate-900 rounded-xl bg-bgcolor   items-center justify-center text-center  text-white'>
+    <div className='flex px-4 sm:pt-[50rem] py-[5rem] sm:py-[10rem] min-w-full justify-center  ' >
+      <div className=' min-w-[90%] flex iteams-center justify-center md:w-[77%] '>
+        <AnimatedSection>
+        <div className='flex  flex-col p-10 backdrop-blur-sm border-2 border-slate-900 rounded-xl bg-bgcolor   items-center justify-center text-center  text-white' id='footer'>
           <div className='text-[1.7rem] font-[600] text-primary'> GET IN TOUCH</div>
           <div className='py-6 text-[1.2rem] font-[400]'>Let’s talk about it!</div>
           <span className='tracking-4 pb-10 text-[0.8rem] font-[300] leading-[2rem] md:w-[80%]'>
@@ -29,6 +30,7 @@ const Footer: React.FC = () => {
           </a>
           <Contacts/>
         </div>
+        </AnimatedSection>
 
       </div>
     </div>

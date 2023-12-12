@@ -22,7 +22,7 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({ onButtonClick }) 
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.2 // Adjust the threshold as needed
+      threshold: 0.1 // Adjust the threshold as needed
     })
 
     // Iterate over section IDs and observe their elements

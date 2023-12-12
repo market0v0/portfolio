@@ -125,7 +125,7 @@ export const MouseImageTrail = ({
           }`
         ]
       },
-      { type: 'spring', damping: 15, stiffness: 200 }
+      { type: 'spring', damping: 15, stiffness: 100 }
     )
 
     void animate(
@@ -133,7 +133,7 @@ export const MouseImageTrail = ({
       {
         opacity: [1, 0]
       },
-      { ease: 'linear', duration: 0.5, delay: 5 }
+      { ease: 'linear', duration: 0.5, delay: 3 }
     )
 
     imageRenderCount.current = imageRenderCount.current + 1
