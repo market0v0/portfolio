@@ -6,7 +6,7 @@ import Contacts from '../nav/contaxt'
 const Footer: React.FC = () => {
   return (
     <AnimatedSection>
-    <div className='flex px-4 sm:pt-[50rem] py-[5rem] sm:py-[10rem] min-w-full justify-center  ' >
+    <div className='flex px-4 items-center min-w-full min-h-screen justify-center  ' >
       <div className=' min-w-[90%] flex iteams-center justify-center md:w-[77%] '>
         <AnimatedSection>
         <div className='flex  flex-col p-10 backdrop-blur-sm border-2 border-slate-900 rounded-xl bg-bgcolor   items-center justify-center text-center  text-white' id='footer'>
