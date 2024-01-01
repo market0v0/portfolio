@@ -40,7 +40,7 @@ const HeroFrame: React.FC = () => {
             <div className='  text-[.6rem] font-[400] leading-6 tracking-[0.025rem] md:leading-10  lg:leading-[1rem] '>
               <NormalType
                 text={
-                  ' Passionate software developer seeking growth opportunities.'
+                  'Passionate software developer seeking growth opportunities.'
                 }
               />
             </div>
