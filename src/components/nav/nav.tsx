@@ -10,7 +10,6 @@ const Navigation: React.FC = () => {
       const deltaY = e.deltaY
       const isScrollingDown = deltaY > 0
       const threshold = 50
-
       if (Math.abs(deltaY) > threshold) {
         setWidthContracted(isScrollingDown)
       }
