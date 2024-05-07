@@ -10,7 +10,7 @@ const Profile: React.FC = () => {
 
           <div className='justify-self-center '>
 
-            <img src='/profile.svg' alt='project' width='550' height='100% z-0' className='sm:rounded-none rounded-sm'/>
+            <img src='/profile1.svg' alt='project' width='550' height='100% z-0' className='sm:rounded-none rounded-sm'/>
 
           </div>
           <div className='grid items-start '>

@@ -6,7 +6,7 @@ import AnimatedSection from '../PageAnimation'
 import ZoomSection from '../zoomANimation'
 
 const Portfolio: React.FC = () => {
-  const sectionIds = ['pg1', 'pg2', 'pg3', 'pg4'] // Add more sections if needed
+  const sectionIds = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'] // Add more sections if needed
   const [currentSection, setCurrentSection] = useState<string | null>(null)
 
   useEffect(() => {
