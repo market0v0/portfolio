@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
       label: 'Email',
       value: 'cuevamarkvincent@gmail.com',
       href: 'mailto:cuevamarkvincent@gmail.com',
-      primary: true
+      primary: false
     },
     {
       icon: (
@@ -58,23 +58,23 @@ const Contact: React.FC = () => {
             <div className='pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100' />
             <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-purple-500/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100' />
 
-            <div className='relative z-10 p-12 lg:p-16'>
+            <div className='relative z-10 p-6 sm:p-12 lg:p-16'>
               {/* Header */}
-              <div className='mb-12 text-center'>
-                <div className='mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-gradient-to-r from-primary/10 to-purple-500/10 px-4 py-2 backdrop-blur-xl'>
+              <div className='mb-8 sm:mb-12 text-center'>
+                <div className='mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-gradient-to-r from-primary/10 to-purple-500/10 px-3 sm:px-4 py-1.5 sm:py-2 backdrop-blur-xl'>
                   <div className='h-2 w-2 rounded-full bg-primary' />
-                  <span className='text-sm font-semibold uppercase tracking-wider text-primary'>Let&apos;s Connect</span>
+                  <span className='text-xs sm:text-sm font-semibold uppercase tracking-wider text-primary'>Let&apos;s Connect</span>
                 </div>
-                <h2 className='mb-4 text-[2.5rem] font-bold text-light-text dark:text-dark-text lg:text-[3.5rem]'>
+                <h2 className='mb-3 sm:mb-4 text-[1.75rem] sm:text-[2.5rem] font-bold text-light-text dark:text-dark-text lg:text-[3.5rem]'>
                   Ready to Work Together?
                 </h2>
-                <p className='mx-auto max-w-2xl text-[1.1rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary lg:text-[1.2rem]'>
+                <p className='mx-auto max-w-2xl text-[0.95rem] sm:text-[1.1rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary lg:text-[1.2rem] px-2'>
                   I&apos;m currently available for full-time positions and contract work. Let&apos;s discuss how I can help bring your project to life.
                 </p>
               </div>
 
               {/* Contact Methods Grid */}
-              <div className='mb-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+              <div className='mb-8 sm:mb-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
                 {contactMethods.map((method, index) => (
                   <a
                     key={index}
@@ -85,14 +85,14 @@ const Contact: React.FC = () => {
                   >
                     <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover/card:opacity-100' />
 
-                    <div className='relative z-10 p-6'>
-                      <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-all ${method.primary ? 'bg-primary/20 text-primary' : 'bg-white/50 text-light-text-secondary group-hover/card:bg-primary/20 group-hover/card:text-primary dark:bg-dark-card/50 dark:text-dark-text-secondary'}`}>
+                    <div className='relative z-10 p-4 sm:p-6'>
+                      <div className={`mb-3 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl transition-all ${method.primary ? 'bg-primary/20 text-primary' : 'bg-white/50 text-light-text-secondary group-hover/card:bg-primary/20 group-hover/card:text-primary dark:bg-dark-card/50 dark:text-dark-text-secondary'}`}>
                         {method.icon}
                       </div>
-                      <div className='mb-1 text-sm font-semibold uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary'>
+                      <div className='mb-1 text-xs sm:text-sm font-semibold uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary'>
                         {method.label}
                       </div>
-                      <div className={`text-[0.95rem] font-medium transition-colors ${
+                      <div className={`text-[0.85rem] sm:text-[0.95rem] font-medium transition-colors break-words ${
                         method.primary ? 'text-primary' : 'text-light-text group-hover/card:text-primary dark:text-dark-text'
                       }`}>
                         {method.value}
@@ -103,26 +103,26 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Primary CTA */}
-              <div className='flex flex-col items-center justify-center gap-4 sm:flex-row'>
+              <div className='flex flex-col items-stretch sm:items-center justify-center gap-3 sm:gap-4 sm:flex-row'>
                 <a
                   href='mailto:cuevamarkvincent@gmail.com?subject=Let&apos;s Work Together&body=Hi Mark, I&apos;d like to discuss...'
-                  className='group/btn relative inline-flex items-center gap-3 overflow-hidden rounded-xl bg-gradient-to-r from-primary to-purple-500 px-8 py-4 text-[1rem] font-bold text-white shadow-glow transition-all duration-300 hover:scale-105 hover:shadow-glow-lg'
+                  className='group/btn relative inline-flex items-center justify-center gap-2 sm:gap-3 overflow-hidden rounded-xl bg-gradient-to-r from-primary to-purple-500 px-6 sm:px-8 py-3 sm:py-4 text-[0.9rem] sm:text-[1rem] font-bold text-white shadow-glow transition-all duration-300 hover:scale-105 hover:shadow-glow-lg'
                 >
                   <span className='absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100' />
-                  <svg className='relative z-10 h-5 w-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <svg className='relative z-10 h-4 w-4 sm:h-5 sm:w-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />
                   </svg>
                   <span className='relative z-10'>Send Me an Email</span>
-                  <svg className='relative z-10 h-4 w-4 transition-transform group-hover/btn:translate-x-1' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <svg className='relative z-10 h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover/btn:translate-x-1' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4m4-4H3' />
                   </svg>
                 </a>
 
                 <a
                   href='/resume'
-                  className='group/btn inline-flex items-center gap-3 rounded-xl border border-light-border bg-white/50 px-8 py-4 text-[1rem] font-bold text-light-text shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:text-primary dark:border-glass-border dark:bg-glass-bg dark:text-dark-text dark:shadow-none'
+                  className='group/btn inline-flex items-center justify-center gap-2 sm:gap-3 rounded-xl border border-light-border bg-white/50 px-6 sm:px-8 py-3 sm:py-4 text-[0.9rem] sm:text-[1rem] font-bold text-light-text shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:text-primary dark:border-glass-border dark:bg-glass-bg dark:text-dark-text dark:shadow-none'
                 >
-                  <svg className='h-5 w-5 transition-transform group-hover/btn:translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <svg className='h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover/btn:translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
                   </svg>
                   <span>View Resume</span>
@@ -131,9 +131,9 @@ const Contact: React.FC = () => {
                 <a
                   href='/CUEVA_MARKVINCENT_CV.pdf'
                   download='CUEVA_MARKVINCENT_CV.pdf'
-                  className='group/btn inline-flex items-center gap-3 rounded-xl border border-light-border bg-white/50 px-8 py-4 text-[1rem] font-bold text-light-text shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:text-primary dark:border-glass-border dark:bg-glass-bg dark:text-dark-text dark:shadow-none'
+                  className='group/btn inline-flex items-center justify-center gap-2 sm:gap-3 rounded-xl border border-light-border bg-white/50 px-6 sm:px-8 py-3 sm:py-4 text-[0.9rem] sm:text-[1rem] font-bold text-light-text shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:text-primary dark:border-glass-border dark:bg-glass-bg dark:text-dark-text dark:shadow-none'
                 >
-                  <svg className='h-5 w-5 transition-transform group-hover/btn:translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <svg className='h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover/btn:translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
                   </svg>
                   <span>Download PDF</span>
@@ -141,11 +141,11 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Footer */}
-              <div className='mt-12 border-t border-light-border pt-8 text-center dark:border-glass-border'>
-                <p className='text-sm text-light-text-secondary dark:text-dark-text-secondary'>
+              <div className='mt-8 sm:mt-12 border-t border-light-border pt-6 sm:pt-8 text-center dark:border-glass-border px-2'>
+                <p className='text-xs sm:text-sm text-light-text-secondary dark:text-dark-text-secondary'>
                   Built with Next.js, React, TypeScript, and Tailwind CSS
                 </p>
-                <p className='mt-2 text-sm text-light-text-secondary dark:text-dark-text-secondary'>
+                <p className='mt-2 text-xs sm:text-sm text-light-text-secondary dark:text-dark-text-secondary'>
                   &copy; {new Date().getFullYear()} Mark Vincent A. Cueva. All rights reserved.
                 </p>
               </div>

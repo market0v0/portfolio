@@ -33,7 +33,7 @@ const HeroFrame: React.FC = () => {
                   </span>
                 </h1>
 
-                <p className='mx-auto max-w-2xl text-[1.1rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary lg:text-[1.3rem]'>
+                <p className='mx-auto max-w-2xl text-[1.1rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary lg:text-[1.3rem] hidden md:block'>
                   <NormalType
                     text={
                       'Transforming ideas into production-ready applications with React, TypeScript, Spring Boot, and AI integration. 2+ years delivering scalable solutions for enterprise clients.'
