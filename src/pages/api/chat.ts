@@ -53,7 +53,7 @@ export default async function handler(
   }
 
   try {
-    const { message } = req.body;
+    const { message, history = [] } = req.body;
 
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
@@ -69,14 +69,20 @@ export default async function handler(
       temperature: 0.7,
     });
 
+    // Format conversation history
+    const conversationHistory = history.length > 0
+      ? '\n\nConversation History:\n' + history.map((msg: any) => `${msg.role === 'user' ? 'User' : 'Tina'}: ${msg.content}`).join('\n')
+      : '';
+
     // Create a prompt template
     const prompt = PromptTemplate.fromTemplate(`
 You are Tina, Mark's friendly AI assistant. Talk like a real person having a casual conversation - keep it short, natural, and human.
 
 Resume Info:
 {resume}
+{history}
 
-Question: {question}
+Current Question: {question}
 
 Instructions:
 - ONLY answer questions about Mark's professional background, skills, experience, projects, or qualifications
@@ -108,6 +114,7 @@ Answer naturally in third person:
     // Invoke the chain
     const response = await chain.invoke({
       resume: resumeContent,
+      history: conversationHistory,
       question: message,
     });
 

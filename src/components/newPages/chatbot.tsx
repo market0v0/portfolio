@@ -90,7 +90,13 @@ const Chatbot: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: inputMessage }),
+        body: JSON.stringify({
+          message: inputMessage,
+          history: messages.map(msg => ({
+            role: msg.role,
+            content: msg.content
+          }))
+        }),
       })
 
       if (!response.ok) {
