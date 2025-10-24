@@ -50,7 +50,7 @@ const CustomDropdown: React.FC<NavigationProps> = ({ onButtonClick }) => {
             {/* Dark/Light Mode Toggle for Mobile */}
             <div className='mt-2 border-t border-light-border pt-2 dark:border-glass-border'>
               <button
-                onClick={() => mode(!darkMode)}
+                onClick={() => { mode(!darkMode) }}
                 className='flex w-full items-center justify-center gap-2 rounded-lg bg-light-card px-4 py-2 text-sm font-medium text-light-text transition-all hover:bg-primary/10 hover:text-primary dark:bg-dark-card dark:text-dark-text'
               >
                 {darkMode ? (

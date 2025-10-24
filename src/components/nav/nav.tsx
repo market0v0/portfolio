@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
           <div className='hidden items-center gap-4 sm:flex'>
             {/* Dark/Light Mode Toggle */}
             <button
-              onClick={() => mode(!darkMode)}
+              onClick={() => { mode(!darkMode) }}
               className='flex h-10 w-10 items-center justify-center rounded-xl border border-glass-border bg-glass-bg text-light-text backdrop-blur-xl transition-all hover:border-primary/50 hover:bg-primary/10 dark:text-dark-text'
               aria-label='Toggle theme'
             >

@@ -81,20 +81,12 @@ const Contact: React.FC = () => {
                     href={method.href}
                     target={method.href.startsWith('http') ? '_blank' : undefined}
                     rel={method.href.startsWith('http') ? 'noreferrer' : undefined}
-                    className={`group/card relative overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-glass-lg ${
-                      method.primary
-                        ? 'border-primary/40 bg-gradient-to-br from-primary/20 to-purple-500/20 shadow-glow'
-                        : 'border-light-border bg-white/50 shadow-lg hover:border-primary/40 dark:border-glass-border dark:bg-glass-bg dark:shadow-none'
-                    }`}
+                    className={`group/card relative overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-glass-lg ${method.primary ? 'border-primary/40 bg-gradient-to-br from-primary/20 to-purple-500/20 shadow-glow' : 'border-light-border bg-white/50 shadow-lg hover:border-primary/40 dark:border-glass-border dark:bg-glass-bg dark:shadow-none'}`}
                   >
                     <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover/card:opacity-100' />
 
                     <div className='relative z-10 p-6'>
-                      <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-all ${
-                        method.primary
-                          ? 'bg-primary/20 text-primary'
-                          : 'bg-white/50 text-light-text-secondary group-hover/card:bg-primary/20 group-hover/card:text-primary dark:bg-dark-card/50 dark:text-dark-text-secondary'
-                      }`}>
+                      <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-all ${method.primary ? 'bg-primary/20 text-primary' : 'bg-white/50 text-light-text-secondary group-hover/card:bg-primary/20 group-hover/card:text-primary dark:bg-dark-card/50 dark:text-dark-text-secondary'}`}>
                         {method.icon}
                       </div>
                       <div className='mb-1 text-sm font-semibold uppercase tracking-wider text-light-text-secondary dark:text-dark-text-secondary'>

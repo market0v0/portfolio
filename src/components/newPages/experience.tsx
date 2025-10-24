@@ -1,6 +1,5 @@
 import React from 'react'
 import AnimatedSection from '../PageAnimation'
-import ZoomSection from '../zoomANimation'
 import { experienceData } from '@/pages/api/data'
 
 const Experience: React.FC = () => {
@@ -40,7 +39,7 @@ const Experience: React.FC = () => {
                       <p className='mb-2 text-[1.1rem] font-medium text-primary lg:text-[1.2rem]'>
                         {experience.company}
                       </p>
-                      {experience.location && (
+                      {(experience.location != null) && experience.location.length > 0 && (
                         <p className='text-sm text-light-text-secondary dark:text-dark-text-secondary'>
                           {experience.location}
                         </p>

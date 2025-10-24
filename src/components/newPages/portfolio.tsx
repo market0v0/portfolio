@@ -1,44 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import ProjectCard from './projectCard'
 import { projectsdata } from '@/pages/api/data'
-import AnimatedSection from '../PageAnimation'
 import ZoomSection from '../zoomANimation'
 
 const Portfolio: React.FC = () => {
-  const sectionIds = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5'] // Add more sections if needed
-  const [currentSection, setCurrentSection] = useState<string | null>(null)
-
-  useEffect(() => {
-    const handleIntersection = (entries: IntersectionObserverEntry[]): void => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setCurrentSection(entry.target.id)
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.6
-    })
-
-    sectionIds.forEach((sectionId) => {
-      const element = document.getElementById(sectionId)
-      if (element != null) {
-        observer.observe(element)
-      }
-    })
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [sectionIds])
-
-  const currentSectionIndex =
-    currentSection != null ? sectionIds.indexOf(currentSection) : 0
-  const isEvenSection = currentSectionIndex % 2 !== 0
-
-  const switchPosition = isEvenSection ? 'translate-x-[100%]' : 'translate-x-[0]'
+  const sectionIds = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5']
 
   return (
     <div className='py-20'>

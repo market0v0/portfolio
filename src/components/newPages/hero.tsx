@@ -1,7 +1,5 @@
 import React from 'react'
 
-import OutlineButton from '../outlineButton'
-import BubbleText from '../bubble'
 import NormalType from '../normalType'
 import { scrollToSection } from '../utils'
 import ZoomSection from '../zoomANimation'
@@ -102,11 +100,7 @@ const HeroFrame: React.FC = () => {
               ].map((tech) => (
                 <div
                   key={tech.name}
-                  className={`rounded-lg border px-3 py-1.5 text-xs backdrop-blur-xl transition-all sm:px-4 sm:py-2 sm:text-sm ${
-                    tech.highlight
-                      ? 'border-primary/40 bg-gradient-to-r from-primary/20 to-purple-500/20 font-semibold text-primary shadow-glow'
-                      : 'border-light-border bg-white/50 text-light-text-secondary shadow-lg hover:border-primary/30 dark:border-glass-border dark:bg-glass-bg dark:text-dark-text-secondary dark:shadow-none'
-                  }`}
+                  className={`rounded-lg border px-3 py-1.5 text-xs backdrop-blur-xl transition-all sm:px-4 sm:py-2 sm:text-sm ${tech.highlight ? 'border-primary/40 bg-gradient-to-r from-primary/20 to-purple-500/20 font-semibold text-primary shadow-glow' : 'border-light-border bg-white/50 text-light-text-secondary shadow-lg hover:border-primary/30 dark:border-glass-border dark:bg-glass-bg dark:text-dark-text-secondary dark:shadow-none'}`}
                 >
                   {tech.name}
                 </div>

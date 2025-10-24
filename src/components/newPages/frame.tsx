@@ -3,14 +3,12 @@ import Navigation from '../nav/nav'
 import Skill from './skill'
 import Contact from './contact'
 import Profile from './profile'
-import { useMyContext } from '../context/context'
 import ProjectPage from './projectPage'
 import Experience from './experience'
 
 // ... (imports and other code)
 
 const Frame: React.FC = () => {
-  const { data } = useMyContext()
   return (
     <div className='min-h-screen bg-light-bg transition-colors duration-300 dark:bg-dark-bg'>
       {/* Animated background gradient */}
