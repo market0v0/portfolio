@@ -152,9 +152,9 @@ const Chatbot: React.FC = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[380px] h-[600px] flex flex-col rounded-2xl border border-gray-200 dark:border-glass-border  backdrop-blur-2xl shadow-2xl dark:shadow-glass-lg overflow-hidden">
+        <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 w-full sm:w-[380px] h-[100vh] sm:h-[600px] flex flex-col rounded-none sm:rounded-2xl border-t sm:border border-gray-200 dark:border-glass-border dark:bg-glass-gradient backdrop-blur-2xl shadow-2xl dark:shadow-glass-lg overflow-hidden">
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-primary/10 to-purple-500/10 border-b border-gray-200 dark:border-glass-border">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-primary/10 to-purple-500/10 border-b border-gray-200 dark:border-glass-border">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-purple-500 flex items-center justify-center">
                 <FiMessageCircle className="w-5 h-5 text-white" />
@@ -188,7 +188,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+          <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 space-y-4">
             {messages.map((message, index) => (
               <div
                 key={index}
@@ -197,13 +197,13 @@ const Chatbot: React.FC = () => {
                 }`}
               >
                 <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-3 ${
+                  className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-3 sm:px-4 py-2 sm:py-3 ${
                     message.role === 'user'
                       ? 'bg-gradient-to-r from-primary to-purple-500 text-white'
-                      : 'bg-gray-300 dark:bg-white/5 border border-gray-200 dark:border-glass-border text-gray-900 dark:text-dark-text'
+                      : 'bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-glass-border text-gray-900 dark:text-dark-text'
                   }`}
                 >
-                  <p className="text-[0.9rem] whitespace-pre-wrap">
+                  <p className="text-[0.85rem] sm:text-[0.9rem] whitespace-pre-wrap break-words">
                     {message.content}
                   </p>
                   <p
@@ -224,7 +224,7 @@ const Chatbot: React.FC = () => {
 
             {isLoading && (
               <div className="flex justify-start">
-                <div className="max-w-[80%] rounded-2xl px-4 py-3 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-glass-border">
+                <div className="max-w-[85%] sm:max-w-[80%] rounded-2xl px-3 sm:px-4 py-2 sm:py-3 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-glass-border">
                   <div className="flex space-x-2">
                     <div className="w-2 h-2 rounded-full bg-primary animate-bounce" />
                     <div className="w-2 h-2 rounded-full bg-primary animate-bounce delay-100" />
@@ -255,7 +255,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="px-4 py-4 border-t border-gray-200 dark:border-glass-border bg-gray-50 dark:bg-white/5">
+          <div className="px-3 sm:px-4 py-3 sm:py-4 border-t border-gray-200 dark:border-glass-border bg-gray-50 dark:bg-white/5">
             <div className="flex items-end space-x-2">
               <textarea
                 value={inputMessage}
@@ -263,16 +263,16 @@ const Chatbot: React.FC = () => {
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
                 rows={1}
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-glass-border bg-white dark:bg-white/5 text-gray-900 dark:text-dark-text placeholder-gray-400 dark:placeholder-dark-text-secondary resize-none focus:outline-none focus:border-primary/30 transition-all duration-300"
+                className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-[0.9rem] rounded-xl border border-gray-300 dark:border-glass-border bg-white dark:bg-white/5 text-gray-900 dark:text-dark-text placeholder-gray-400 dark:placeholder-dark-text-secondary resize-none focus:outline-none focus:border-primary/30 transition-all duration-300"
                 disabled={isLoading}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!inputMessage.trim() || isLoading}
-                className="p-3 rounded-xl bg-gradient-to-r from-primary to-purple-500 text-white hover:shadow-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
+                className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-primary to-purple-500 text-white hover:shadow-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none flex-shrink-0"
                 aria-label="Send message"
               >
-                <FiSend className="w-5 h-5" />
+                <FiSend className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
