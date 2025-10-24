@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import Mode from '../mode'
+import { useMyContext } from '../context/context'
 import Hamburger from './mobilenav'
 import NavigationButtons from './NavBtn'
 
 const Navigation: React.FC = () => {
+  const { data: darkMode, mode } = useMyContext()
   const [widthContracted, setWidthContracted] = useState(true)
+
   useEffect(() => {
     const handleWheel = (e: WheelEvent): void => {
       const deltaY = e.deltaY
       const isScrollingDown = deltaY > 0
       const threshold = 50
+
       if (Math.abs(deltaY) > threshold) {
         setWidthContracted(isScrollingDown)
       }
@@ -23,35 +26,53 @@ const Navigation: React.FC = () => {
   }, [])
 
   return (
-    <div className={'fixed left-0 right-0 top-0 z-50 flex'}>
-      <div className='color-white flex min-h-[6em] w-full items-center justify-center'>
-        <div
-          className={`flex   grid-cols-2 gap-4 bg-bgcolor items-center  rounded-xl justify-between  backdrop-blur-sm border-2 border-slate-900 duration-300  px-6 transition-all  ${
-            widthContracted ? ' sm:w-[30rem] w-[10rem]  ' : 'w-[90%] sm:w-[60%]  '
+    <div className='fixed left-0 right-0 top-0 z-50 flex justify-center'>
+      <div className='flex min-h-[6em] w-full items-center justify-center px-4'>
+        <nav
+          className={`flex items-center justify-between rounded-2xl border border-glass-border bg-light-card/90 px-6 py-4 backdrop-blur-2xl transition-all duration-300 dark:bg-dark-card/80 ${
+            widthContracted ? 'w-[16rem] sm:w-[35rem]' : 'w-[90%] sm:w-[60%]'
           }`}
         >
+          {/* Logo */}
           <div
             onClick={() => (window.location.href = '/')}
-            className={'flex cursor-pointer  transition-all items-center py-2 text-[1rem] sm:text-[1.5rem] font-bold  duration-300 ease-in-out '}
+            className='cursor-pointer text-[1rem] font-bold text-light-text transition-all hover:text-primary dark:text-dark-text sm:text-[1.2rem]'
           >
-            Mark<span className='text-primary'>ED?</span>
+            Mark<span className='text-primary'>ED</span>
           </div>
-          <div className='sm:block hidden'
-          >
-           <NavigationButtons onButtonClick={() => { setWidthContracted(true) }} />
+
+          {/* Desktop Navigation */}
+          <div className='hidden items-center gap-8 sm:flex'>
+            <NavigationButtons onButtonClick={() => { setWidthContracted(true) }} />
           </div>
-          <div className='flex sm:hidden'>
+
+          {/* Mobile Menu */}
+          <div className='flex items-center gap-3 sm:hidden'>
             <div onClick={() => { setWidthContracted(false) }}>
-            <Hamburger onButtonClick={() => { setWidthContracted(true) }} />
+              <Hamburger onButtonClick={() => { setWidthContracted(true) }} />
             </div>
-
           </div>
-          <div className={'duration-300 sm:flex hidden items-center transition-all ease-in-out'}>
 
-            <Mode />
-
+          {/* Actions */}
+          <div className='hidden items-center gap-4 sm:flex'>
+            {/* Dark/Light Mode Toggle */}
+            <button
+              onClick={() => mode(!darkMode)}
+              className='flex h-10 w-10 items-center justify-center rounded-xl border border-glass-border bg-glass-bg text-light-text backdrop-blur-xl transition-all hover:border-primary/50 hover:bg-primary/10 dark:text-dark-text'
+              aria-label='Toggle theme'
+            >
+              {darkMode ? (
+                <svg className='h-5 w-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z' />
+                </svg>
+              ) : (
+                <svg className='h-5 w-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z' />
+                </svg>
+              )}
+            </button>
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   )

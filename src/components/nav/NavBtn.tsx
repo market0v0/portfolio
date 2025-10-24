@@ -6,7 +6,7 @@ interface NavigationButtonsProps {
   onButtonClick: () => void
 }
 
-const sectionIds = ['hero', 'profile', 'skills', 'projects']
+const sectionIds = ['hero', 'profile', 'experience', 'skills', 'projects']
 
 const NavigationButtons: React.FC<NavigationButtonsProps> = ({ onButtonClick }) => {
   const [currentSection, setCurrentSection] = useState<string | null>(null)
@@ -39,24 +39,23 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({ onButtonClick }) 
   }, [])
 
   return (
-    <div className={'cursor-pointer text-secondary text-[1rem] gap-8  sm:gap-2 sm:text-[.6rem] grid  sm:flex '}>
+    <div className='flex flex-col items-stretch gap-1 sm:flex-row sm:items-center'>
       {sectionIds.map((sectionId) => (
-        <span
+        <button
           key={sectionId}
-          className={`${currentSection === sectionId ? 'bg-primary' : ''} flex items-center justify-center transition-all px-2 rounded-md`}
+          className={`${
+            currentSection === sectionId
+              ? 'bg-primary/10 text-primary'
+              : 'text-light-text-secondary hover:text-light-text dark:text-gray-400 dark:hover:text-dark-text'
+          } rounded-lg px-4 py-2 text-[0.9rem] font-medium transition-all`}
           onClick={() => {
             scrollToSection(sectionId)
-            onButtonClick() // Call the callback when a button is clicked
+            onButtonClick()
           }}
         >
           {sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}
-        </span>
+        </button>
       ))}
-      <div onClick={() => {
-        mode(!data)
-        onButtonClick()
-      }} className={`${data ? ' bg-secondary text-primary' : 'bg-primary'} flex sm:hidden items-center justify-center transition-all px-2 rounded-md`}>Mode</div>
-
     </div>
   )
 }

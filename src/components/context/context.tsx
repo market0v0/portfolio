@@ -1,5 +1,5 @@
 // MyContext.tsx
-import React, { createContext, useContext, type ReactNode } from 'react'
+import React, { createContext, useContext, type ReactNode, useEffect } from 'react'
 
 interface MyContextProps {
   data: boolean
@@ -17,7 +17,22 @@ const MyContextProvider: React.FC<MyContextProviderProps> = ({ children }) => {
 
   const updateMode = (newData: boolean): void => {
     setData(newData)
+    // Update HTML class for dark mode
+    if (newData) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
   }
+
+  // Initialize dark mode on mount
+  useEffect(() => {
+    // Always ensure dark mode is applied on initial load
+    document.documentElement.classList.add('dark')
+    if (!data) {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
 
   const contextValue: MyContextProps = {
     data,

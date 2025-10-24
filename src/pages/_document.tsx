@@ -3,7 +3,7 @@ import React from 'react'
 
 const Document: any = () => {
   return (
-    <Html lang='en'>
+    <Html lang='en' className='dark'>
       <Head>
         <link rel='icon' href='/logomark.svg' />
       </Head>
