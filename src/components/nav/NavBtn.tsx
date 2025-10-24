@@ -41,7 +41,7 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({ onButtonClick }) 
       {sectionIds.map((sectionId) => (
         <button
           key={sectionId}
-          className={`${currentSection === sectionId ? 'bg-primary/10 text-primary' : 'text-light-text-secondary hover:text-light-text dark:text-gray-400 dark:hover:text-dark-text'} rounded-lg px-4 py-2 text-[0.9rem] font-medium transition-all`}
+          className={`${currentSection === sectionId ? 'bg-primary/10 text-primary' : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-dark-text'} rounded-lg px-4 py-2 text-[0.9rem] font-medium transition-all`}
           onClick={() => {
             scrollToSection(sectionId)
             onButtonClick()

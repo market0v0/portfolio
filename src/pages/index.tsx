@@ -1,5 +1,6 @@
 import { MyContextProvider } from '@/components/context/context'
 import Frame from '@/components/newPages/frame'
+import Chatbot from '@/components/newPages/chatbot'
 import React from 'react'
 
 const Home: React.FC = () => {
@@ -8,6 +9,7 @@ const Home: React.FC = () => {
       {/*       <Mainframe/> */}
       <MyContextProvider>
       <Frame/>
+      <Chatbot/>
       </MyContextProvider>
 
       {/*  */}

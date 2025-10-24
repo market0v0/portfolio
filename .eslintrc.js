@@ -13,7 +13,19 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'multiline-ternary': ['error', 'never'],
-    'react/react-in-jsx-scope': 'off'
+    'multiline-ternary': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/no-unescaped-entities': 'off',
+    '@typescript-eslint/semi': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/quotes': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-confusing-void-expression': 'off'
   }
 }

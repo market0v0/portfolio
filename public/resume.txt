@@ -1,0 +1,179 @@
+MARK VINCENT A. CUEVA
+Software Engineer
+
+Email: cuevamarkvincent@gmail.com
+Phone: +63 968 650 6973
+LinkedIn: linkedin.com/in/mark-cueva-90a33424a
+GitHub: github.com/market0v0
+
+PROFESSIONAL SUMMARY
+Innovative Software Engineer with expertise in full-stack development, cloud architecture, and AI integration. Experienced in building scalable web applications using modern frameworks and implementing intelligent automation solutions. Proven track record of delivering high-quality software across multiple domains including e-commerce, enterprise tools, and AI-powered applications.
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineer Intern | Alliance Software Inc. (Jan 2024 – May 2024)
+- Designed and implemented a customer KYC flow for a money exchange app using React and TypeScript
+- Built a responsive exchange rate display screen with real-time updates via API integration
+- Rebuilt an Azure-based automation pipeline for dashboard data ingestion and transformation
+- Developed workflows and scheduled jobs to sync and visualize data for operational dashboards
+
+Junior Software Engineer | Ease Solutions (Jun 2024 – Dec 2024)
+- Contributed to a dictionary feature enhancement in a custom Jira plugin
+- Optimized tree and node data fetching via Spring APIs for improved performance
+- Built Selenium-based test automation for UI validation and regression coverage
+- Strengthened understanding of Jira workflows and issue tracking through active sprint participation
+- Collaborated effectively within a Scrum team, improving coordination and delivery across sprint cycles
+- Participated in backlog grooming and sprint planning to align technical tasks with business priorities
+
+Software Engineer | Softype Inc. (Jan 2025 - Present)
+- Unified redundant components to streamline performance and reduce system complexity
+- Developed seat selection logic on the T3 stack with optimized data fetching strategies
+- Implemented offline capabilities using PWA, Service Workers, and SQLite for resilient data access
+- Strengthened team collaboration through effective Scrum ceremonies and Jira workflow alignment
+- Provided key insights to management by identifying relevant data needs and improving reporting clarity
+- Fostered a healthy co-working culture and embraced emerging technologies like prompt engineering
+- Built customer and pitching portals to support client demos and stakeholder engagement
+
+TECHNICAL SKILLS
+
+Frontend Development
+- Languages: TypeScript, JavaScript, HTML5, CSS3
+- Frameworks: React.js, Next.js, Vue.js
+- UI Libraries: Tailwind CSS, Material UI, Ant Design, shadcn/ui
+- State Management: Redux, Context API, Zustand
+- Animation: Framer Motion, Three.js
+- Progressive Web Apps (PWA)
+
+Backend Development
+- Languages: Java, Python, Node.js
+- Frameworks: Spring Boot, Express.js, Flask, Django
+- API Design: RESTful APIs, GraphQL, tRPC
+- Authentication: JWT, OAuth, Session Management
+
+Cloud & DevOps
+- AWS Services: Lambda, S3, EC2, DynamoDB, API Gateway, CloudWatch
+- Azure Services: DevOps, Functions, Storage, App Service
+- Containers: Docker, Docker Compose
+- CI/CD: GitHub Actions, Azure Pipelines, Jenkins
+- Version Control: Git, GitHub, GitLab
+
+Artificial Intelligence & Machine Learning
+- AI Integration: Claude AI, OpenAI GPT, AI Agents
+- Prompt Engineering and optimization
+- LangChain for AI application development
+- Natural Language Processing
+- AI-powered automation workflows
+
+Databases
+- Relational: PostgreSQL, MySQL, SQL Server
+- NoSQL: MongoDB, DynamoDB, Redis
+- ORMs: Prisma, Hibernate, TypeORM, Sequelize
+
+Testing & Quality Assurance
+- Testing Frameworks: JUnit, Mockito, Jest, React Testing Library
+- Automation: Selenium WebDriver
+- API Testing: Postman, Insomnia
+- Test-Driven Development (TDD)
+
+Agile & Project Management
+- Methodologies: Scrum, Kanban
+- Tools: Jira, Confluence, Trello
+- Version Control: Git workflows, Pull Requests
+- Code Reviews and Pair Programming
+
+FEATURED PROJECTS
+
+BRAMK - AI-Powered Customer Support Bot
+- Developed intelligent chatbot using OpenAI GPT integration
+- Implemented real-time analytics dashboard for support metrics
+- Created automated ticket routing and resolution system
+- Built admin panel for bot training and configuration
+- Technologies: React, Node.js, Express, OpenAI API, MongoDB, Socket.io
+
+AskMarked - Anonymous Q&A Platform
+- Built anonymous question submission and answer system
+- Implemented QR code generation for easy platform access
+- Created real-time notification system for new questions
+- Designed responsive UI with smooth animations
+- Technologies: Next.js, TypeScript, PostgreSQL, Prisma, Tailwind CSS
+
+Pinewood Bike - E-commerce Showcase
+- Developed modern e-commerce platform for bike models
+- Implemented 3D product visualization using Three.js
+- Created responsive design with smooth scroll animations
+- Built product filtering and search functionality
+- Technologies: Next.js, Three.js, Tailwind CSS, Framer Motion
+
+Mark Chat - Real-time Messaging Application
+- Built WebSocket-based real-time chat system
+- Implemented group chat and direct messaging features
+- Created message history and notifications
+- Designed modern chat interface with emoji support
+- Technologies: React, Socket.io, Express, MongoDB, Redis
+
+One Blood - Blood Donation Management System
+- Developed blood donation tracking and scheduling system
+- Created donor management and inventory tracking
+- Implemented appointment scheduling with notifications
+- Built admin dashboard for donation analytics
+- Technologies: React, Spring Boot, PostgreSQL, Java
+
+E-commerce Platform
+- Built full-featured online shopping platform
+- Implemented product catalog, cart, and checkout
+- Created admin panel for inventory management
+- Integrated payment gateway and order tracking
+- Technologies: React, Node.js, Express, MongoDB, Stripe
+
+TRAINING & CERTIFICATIONS
+
+Zuitt AWS Bootcamp - Cloud Architecture & Serverless Development
+- Cloud Architecture and Design Patterns
+- Serverless Development (AWS Lambda, API Gateway)
+- Database Management (DynamoDB, RDS)
+- Cloud Security and IAM best practices
+- Cost optimization strategies and monitoring
+- Hands-on projects with AWS services
+
+Zuitt Java Bootcamp - Advanced Backend Engineering
+- Advanced Java Programming and OOP principles
+- Spring Boot Framework and ecosystem
+- Microservices Architecture and design
+- RESTful API Development and best practices
+- Testing with JUnit and Mockito
+- Database design and optimization
+
+Accenture Technology Academy - Backend Development & DevOps
+- Backend Development fundamentals
+- DevOps practices and CI/CD pipelines
+- Agile methodology and Scrum framework
+- Enterprise application development
+- Cloud computing basics
+- Software engineering best practices
+
+EDUCATION
+
+Bachelor of Science in Information Technology
+Cebu Institute of Technology - University
+2020 - 2024
+
+ADDITIONAL SKILLS
+
+Soft Skills
+- Problem-solving and analytical thinking
+- Team collaboration and communication
+- Project planning and time management
+- Adaptability to new technologies
+- Continuous learning mindset
+- team lead 
+
+Languages
+- English: Professional working proficiency
+- Filipino: Native proficiency
+
+CONTACT INFORMATION
+Email: cuevamarkvincent@gmail.com
+Phone: +63 968 650 6973
+LinkedIn: linkedin.com/in/mark-cueva-90a33424a
+GitHub: github.com/market0v0
+Portfolio: Professional portfolio website showcasing projects and experience

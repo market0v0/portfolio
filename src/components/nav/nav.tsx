@@ -29,14 +29,14 @@ const Navigation: React.FC = () => {
     <div className='fixed left-0 right-0 top-0 z-50 flex justify-center'>
       <div className='flex min-h-[6em] w-full items-center justify-center px-4'>
         <nav
-          className={`flex items-center justify-between rounded-2xl border border-glass-border bg-light-card/90 px-6 py-4 backdrop-blur-2xl transition-all duration-300 dark:bg-dark-card/80 ${
+          className={`flex items-center justify-between rounded-2xl border border-gray-200 dark:border-glass-border  dark:bg-glass-gradient px-6 py-4 backdrop-blur-2xl shadow-glass-lg transition-all duration-300 ${
             widthContracted ? 'w-[16rem] sm:w-[35rem]' : 'w-[90%] sm:w-[60%]'
           }`}
         >
           {/* Logo */}
           <div
             onClick={() => (window.location.href = '/')}
-            className='cursor-pointer text-[1rem] font-bold text-light-text transition-all hover:text-primary dark:text-dark-text sm:text-[1.2rem]'
+            className='cursor-pointer text-[1rem] font-bold text-gray-900 transition-all hover:text-primary dark:text-dark-text sm:text-[1.2rem]'
           >
             Mark<span className='text-primary'>ED</span>
           </div>
@@ -58,7 +58,7 @@ const Navigation: React.FC = () => {
             {/* Dark/Light Mode Toggle */}
             <button
               onClick={() => { mode(!darkMode) }}
-              className='flex h-10 w-10 items-center justify-center rounded-xl border border-glass-border bg-glass-bg text-light-text backdrop-blur-xl transition-all hover:border-primary/50 hover:bg-primary/10 dark:text-dark-text'
+              className='flex h-10 w-10 items-center justify-center rounded-xl border border-gray-300 dark:border-glass-border bg-gray-100 dark:bg-glass-bg text-gray-900 dark:text-dark-text backdrop-blur-xl transition-all hover:border-primary/50 hover:bg-primary/10'
               aria-label='Toggle theme'
             >
               {darkMode ? (
