@@ -1,8 +1,8 @@
 import React from 'react'
 /* import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer' */
+import { useInView } from 'react-intersection-observer'
+import AnimatedSection from '../PageAnimation' */
 
-import AnimatedSection from '../PageAnimation'
 import Training from './trainingCard'
 import { trainingsData } from '@/pages/api/data'
 import TechStack from './techStack'

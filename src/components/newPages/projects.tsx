@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Featured Hero Project */}
-        {featuredProject && (
+        {featuredProject !== undefined && (
           <AnimatedSection>
             <div className='mb-12'>
               <Project {...featuredProject} featured={true} />

@@ -1,6 +1,5 @@
 import React from 'react'
 import AnimatedSection from '../PageAnimation'
-import { Technologies } from '@/pages/api/data'
 
 interface TechCategory {
   name: string
@@ -104,7 +103,7 @@ const TechStack: React.FC = () => {
                     <span className='text-[0.95rem] text-light-text-secondary group-hover/tech:text-light-text dark:text-dark-text-secondary dark:group-hover/tech:text-dark-text'>
                       {tech.name}
                     </span>
-                    {tech.level && (
+                    {(tech.level != null) && tech.level.length > 0 && (
                       <span className='rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary'>
                         {tech.level}
                       </span>

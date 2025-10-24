@@ -31,14 +31,14 @@ const Profile: React.FC = () => {
             <div className='space-y-6'>
               <div className='space-y-4 text-[1rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary lg:text-[1.1rem]'>
                 <p>
-                  I'm a <span className='font-semibold text-light-text dark:text-dark-text'>Software Engineer</span> with professional experience at Softype Inc.,
+                  I&apos;m a <span className='font-semibold text-light-text dark:text-dark-text'>Software Engineer</span> with professional experience at Softype Inc.,
                   Ease Solutions, and Alliance Software Inc. I graduated with a Bachelor of Science in
                   Information Technology from Cebu Institute of Technology University.
                 </p>
 
                 <p>
                   I specialize in <span className='font-semibold text-light-text dark:text-dark-text'>full-stack development</span> with expertise in React, TypeScript, Next.js,
-                  Spring Boot, and cloud technologies. I've delivered impactful solutions including
+                  Spring Boot, and cloud technologies. I&apos;ve delivered impactful solutions including
                   offline PWA capabilities, seat selection systems, customer KYC flows, and Azure-based
                   automation pipelines.
                 </p>

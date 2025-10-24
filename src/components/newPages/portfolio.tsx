@@ -39,7 +39,6 @@ const Portfolio: React.FC = () => {
   const isEvenSection = currentSectionIndex % 2 !== 0
 
   const switchPosition = isEvenSection ? 'translate-x-[100%]' : 'translate-x-[0]'
-  const reverseGrid = isEvenSection ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-2'
 
   return (
     <div className='py-20'>
