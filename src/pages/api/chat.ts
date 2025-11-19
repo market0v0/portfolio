@@ -70,8 +70,13 @@ export default async function handler(
     });
 
     // Format conversation history
+    interface HistoryMessage {
+      role: string
+      content: string
+    }
+
     const conversationHistory = history.length > 0
-      ? '\n\nConversation History:\n' + history.map((msg: any) => `${msg.role === 'user' ? 'User' : 'Tina'}: ${msg.content}`).join('\n')
+      ? '\n\nConversation History:\n' + history.map((msg: HistoryMessage) => `${msg.role === 'user' ? 'User' : 'Tina'}: ${msg.content}`).join('\n')
       : '';
 
     // Create a prompt template
