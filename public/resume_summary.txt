@@ -1,0 +1,179 @@
+MARK VINCENT A. CUEVA - Software Engineer
+Email: cuevamarkvincent@gmail.com | Phone: +63 968 650 6973
+LinkedIn: linkedin.com/in/mark-cueva-90a33424a | GitHub: github.com/market0v0
+
+PROFESSIONAL SUMMARY:
+Full-stack Software Engineer with 1+ year professional experience building enterprise applications, AI-powered solutions, and high-performance web platforms. Expert in React, TypeScript, Spring Boot, Node.js, and cloud technologies. Proven track record delivering scalable systems improving efficiency by 35%+, reducing costs, processing thousands of daily transactions. Strong problem-solver excelling in Agile environments, mentoring junior developers. Specializes in MERN Stack (MongoDB, Express, React, Node.js) and T3 Stack (TypeScript, tRPC, Tailwind, Prisma, Next.js) architectures.
+
+PROFESSIONAL EXPERIENCE:
+
+Software Engineer | Softype Inc. (Jan 2025 - Present)
+Currently building enterprise solutions for logistics, shipping, and business intelligence:
+
+Time Tracking Application:
+- Built Jira-integrated app with real-time worklog synchronization and comprehensive analytics dashboards for resource management
+- Developed 6-tab reporting system: Worklogs, User Summary, Projects, Resource Management, Analytics, Distribution
+- Enabled Top Performers tracking, Team Hours analysis, inactive user monitoring for sprint retrospectives
+- Engineered role-based access control for team leads with CSV export, billable/non-billable hour categorization, flexible time summaries
+- Implemented production-ready autocomplete search with keyboard navigation, ARIA accessibility, debounced filtering, 25+ unit tests
+- Built high-performance caching layer using Redis-style in-memory storage and optimized batch processing to reduce API calls
+- Tech stack: React, Node.js, Express, Upstash Redis, Jira REST API, Jest
+
+Ferry Booking Platform:
+- Architected multi-tenant SaaS system with 70+ tRPC routers handling passenger tickets, freight BOL, real-time seat allocation for 10,000+ daily bookings
+- Integrated NetSuite ERP via OAuth 1.0 and custom RESTlet APIs to automate sales orders, invoicing, GL entries, daily reconciliation
+- Built payment processing system supporting Maya, GCash, traditional methods with VAT-compliant calculations and audit logging
+- Developed manifest generation and gate operations modules ensuring maritime compliance and streamlining boarding workflows
+- Enabled operations team to manage 30+ vessel types across multiple routes, improving booking efficiency and regulatory compliance by 35%
+- Delivered real-time dashboards for vessel capacity, revenue analytics, route performance
+- Tech stack: T3 Stack (Next.js, TypeScript, tRPC, Prisma), PostgreSQL, Redis, NetSuite APIs, Chart.js
+
+Additional Contributions:
+- Built PWA with offline functionality using SQLite and IndexedDB, serving 5,000+ daily offline users with 99.9% data sync accuracy
+- Strengthened team collaboration through effective Scrum ceremonies and Jira workflow alignment
+- Explored prompt engineering and AI integration to enhance internal tooling and reporting workflows
+
+Junior Software Engineer | Ease Solutions (Jun 2024 - Dec 2024)
+Focused on enterprise Jira plugin development and test automation:
+- Built custom dictionary feature for proprietary Jira plugin serving 500+ enterprise users with sophisticated bidirectional data mapping
+- Architected high-performance RESTful Spring Boot APIs supporting hierarchical tree structures with 10,000+ nodes
+- Achieved 60% reduction in response time (5s → 2s) through advanced Redis caching and query optimization
+- Implemented intelligent Redis caching strategy with TTL optimization, reducing database load by 80%
+- Created enterprise-grade Selenium WebDriver test automation framework with 100+ comprehensive test cases, achieving 95% code coverage
+- Caught 40+ critical bugs before production through comprehensive test coverage
+- Collaborated in Scrum team for sprint planning, backlog grooming, delivery across sprint cycles
+- Tech: Spring Boot, Java, Selenium, Redis, PostgreSQL, Jira Plugin Development
+
+Software Engineer Intern | Alliance Software Inc. (Jan 2024 - May 2024)
+Contributed to fintech application and Azure data pipelines:
+- Designed and implemented secure customer KYC flow for money exchange app using React and TypeScript
+- Processing 500+ daily verifications with 99.8% accuracy rate
+- Built responsive exchange rate display screen with real-time updates via RESTful API integration
+- Rebuilt Azure-based ETL automation pipeline, reducing processing time by 40% (2 hours → 72 minutes)
+- Processing 2M+ records daily with automatic error recovery and data quality validation
+- Created dynamic Power BI dashboards with 50+ custom DAX measures empowering executives with real-time insights
+- Optimized parallel processing strategies handling 10GB+ datasets
+- Tech: React, TypeScript, Azure Functions, Power BI, Azure DevOps
+
+TECHNICAL SKILLS:
+
+Full-Stack Architectures:
+- MERN Stack: MongoDB, Express.js, React, Node.js - full JavaScript stack for rapid development
+- T3 Stack: TypeScript, tRPC (end-to-end type safety), Tailwind CSS, Prisma ORM, Next.js - modern type-safe full-stack
+
+Frontend Development (Expert Level - 3+ years):
+- Languages: TypeScript (advanced generics, utility types), JavaScript ES2023+, HTML5, CSS3
+- Frameworks: React 18+ (Hooks, Context, Suspense, Server Components), Next.js 13/14 (App Router, Server Actions, ISR, SSG), Vue.js 3
+- UI Libraries: Tailwind CSS (custom configurations), Material UI, Ant Design, shadcn/ui, Framer Motion (animations)
+- State Management: Redux Toolkit, Zustand, Context API, React Query/TanStack Query (server state)
+- Performance: Code splitting, lazy loading, PWA (Progressive Web Apps), Service Workers, image optimization
+- Testing: Jest (unit tests), React Testing Library, Playwright (E2E), Cypress
+- Build Tools: Vite, Webpack, Turbopack
+
+Backend Development (Expert Level - 3+ years):
+- Languages: Java 17+ (streams, lambdas), Python 3.11+, Node.js 18+, TypeScript
+- Frameworks: Spring Boot 3 (Spring Data JPA, Spring Security), Express.js, Flask
+- API Design: RESTful APIs (OpenAPI/Swagger), GraphQL, tRPC (end-to-end type safety), WebSockets (Socket.io)
+- Authentication: JWT (access/refresh tokens), OAuth 2.0/OIDC, Session management, RBAC, bcrypt
+- Microservices: Service decomposition, API Gateway, event-driven architecture, RabbitMQ, Kafka, Redis Pub/Sub
+
+Cloud & DevOps (Advanced Level - 2+ years):
+- AWS: Lambda (serverless), EC2, S3, DynamoDB, RDS, CloudFront, API Gateway, CloudWatch
+- Azure: DevOps (CI/CD pipelines), Functions (serverless), Storage, Application Insights
+- Containerization: Docker (multi-stage builds), Kubernetes basics
+- CI/CD: GitHub Actions, Jenkins, Azure Pipelines, automated testing
+- Monitoring: Sentry, DataDog, ELK Stack (Elasticsearch, Logstash, Kibana)
+
+AI/ML Integration (Intermediate Level - 1+ year):
+- AI APIs: Claude AI (Anthropic), OpenAI GPT-4/GPT-3.5, AI Agents, function calling
+- Prompt Engineering: Zero-shot/few-shot learning, chain-of-thought, temperature tuning, context management
+- LangChain: Document loaders, text splitters, vector stores, retrieval chains, conversational memory
+- Vector Databases: Pinecone (semantic search), Weaviate, Chroma, FAISS, embedding generation
+- NLP: Text classification, sentiment analysis, named entity recognition, text summarization
+- RAG: Retrieval Augmented Generation, document chunking, similarity search, context injection
+
+Databases (Expert Level - 3+ years):
+Relational:
+- PostgreSQL: Advanced queries, window functions, CTEs, JSONB, full-text search, partitioning, replication
+- Neon DB: Serverless PostgreSQL with auto-scaling, branching for dev workflows, edge computing integration
+- MySQL: InnoDB engine, query optimization, indexing strategies, stored procedures
+- SQL Server: T-SQL, execution plans, index tuning
+
+NoSQL:
+- MongoDB: Aggregation pipeline, schema design, sharding, replica sets, indexes, change streams, Atlas cloud platform
+- DynamoDB: Single-table design, partition keys, sort keys, GSI/LSI, DynamoDB Streams
+- Redis: Data structures, pub/sub, Lua scripts, clustering, persistence, caching patterns
+
+ORMs & Query Builders:
+- Prisma: PostgreSQL/MySQL/MongoDB support, schema migrations, type safety, Prisma Studio, auto-generated client
+- Hibernate/JPA: Entity relationships, lazy/eager loading, N+1 query prevention
+- TypeORM, Sequelize, Mongoose
+
+Modern Solutions:
+- Prisma + PostgreSQL: Type-safe queries, auto-generated client
+- Prisma + Neon: Serverless edge deployment
+- MongoDB + Mongoose: Schema validation, middleware hooks
+
+Testing & QA (Advanced Level - 2+ years):
+- Methodologies: TDD (Test-Driven Development), BDD, Test Pyramid
+- Unit Testing: JUnit 5, Mockito, Jest, Vitest
+- Integration Testing: TestContainers, Spring Boot Test, Supertest
+- E2E Testing: Playwright (cross-browser, parallel execution), Cypress, Selenium WebDriver
+- API Testing: Postman, REST Assured
+- Performance Testing: k6, JMeter, Lighthouse
+- Maintaining 85%+ code coverage standards
+
+Agile & Project Management (Expert Level - 3+ years):
+- Methodologies: Scrum (certified knowledge), Kanban, Lean software development
+- Practices: Sprint Planning, Daily Standups, Sprint Reviews, Retrospectives
+- Tools: Jira (custom workflows, JQL queries, automation rules), Confluence, Trello, Linear
+- Version Control: Git (rebase, cherry-pick), GitHub (PR reviews, branch protection), GitLab
+- Code Review: Constructive feedback, architecture review, 24-hour turnaround commitment
+
+NOTABLE PROJECTS:
+
+1. BRAMK - AI-Powered Customer Support Bot (MERN Stack)
+   Enterprise-grade intelligent chatbot leveraging OpenAI GPT-4 API serving 50,000+ monthly conversations with 92% customer satisfaction and 4.7/5 rating. Achieved 89% first-contact resolution rate using LangChain with vector embeddings and semantic search. Built real-time analytics platform tracking 15+ KPIs including average response time (1.2s), resolution rate, CSAT scores. Developed intelligent NLP-powered ticket routing system with 95% classification accuracy. Implemented sentiment analysis detecting customer frustration with 93% accuracy. Created WebSocket infrastructure supporting 1,000+ concurrent connections with sub-100ms message delivery.
+   Tech: React 18, Node.js, Express.js, OpenAI GPT-4, LangChain, MongoDB Atlas Vector Search, Socket.io, Redis, Bull queues, Elasticsearch
+   Deployed: AWS with auto-scaling EC2, CloudWatch monitoring, S3, CloudFront CDN (99.98% uptime)
+
+2. AskMarked - Anonymous Q&A Platform (T3 Stack)
+   Viral anonymous Q&A platform attracting 25,000+ users and 100,000+ monthly page views within first 3 months. Military-grade end-to-end encryption (AES-256) ensuring complete anonymity across 500,000+ submitted questions. Dynamic QR code generation with 85% scan-to-submission conversion. Enterprise-scale WebSocket notifications delivering instant alerts to 5,000+ concurrent users (99.9% delivery). Sophisticated rate limiting and spam detection using Redis blocking 15,000+ spam attempts monthly. AI-powered content moderation with 98% accuracy. Stunning responsive UI with 95+ Lighthouse performance score.
+   Tech: Next.js 14 (App Router, React Server Components), TypeScript, PostgreSQL, Prisma ORM, tRPC (end-to-end type safety), Tailwind CSS, Framer Motion, Redis, AWS S3
+   Performance: 98 Lighthouse Performance, 100 Accessibility, 100 Best Practices, 100 SEO
+
+3. Pinewood Bike - E-commerce Showcase with 3D Visualization
+   Award-worthy e-commerce platform with immersive 3D product visualization attracting 50,000+ monthly visitors and 500+ qualified sales leads. Stunning 3D bike rendering using Three.js with photorealistic quality. Interactive 360° viewer with multi-touch gestures, 10x zoom, real-time color customization across 20+ variants. Physics-based animations at 60fps using React Three Fiber. Optimized 3D assets by 70% (5MB → 800KB). Intelligent product filtering processing 10,000+ SKUs instantly. Mesmerizing scroll animations increasing session duration by 85%.
+   Tech: Next.js 14, Three.js (r150), React Three Fiber, Drei helpers, Tailwind CSS, Framer Motion, GSAP, TypeScript, Zustand
+   Core Web Vitals: LCP 1.2s, FID 8ms, CLS 0.05 (top 5% web performance)
+
+4. Mark Chat - Real-time Messaging Application (MERN Stack)
+   Massively-scalable real-time messaging supporting 10,000+ concurrent users with 99.99% uptime and sub-50ms message delivery latency. Socket.io infrastructure with Redis adapter enabling horizontal scaling across 5 server instances, handling 1M+ daily messages. Feature-rich group chat (100+ members) with role-based permissions. Enterprise-grade direct messaging with delivery receipts, read receipts, typing indicators. Infinite scroll pagination with lightning-fast full-text search querying 10M+ messages in <100ms. Media sharing with automatic virus scanning, thumbnail generation, CloudFront CDN. Push notifications via Firebase Cloud Messaging (50,000+ daily). Optional end-to-end encryption (RSA-2048, AES-256).
+   Tech: React 18, Socket.io with Redis adapter, Express.js, MongoDB with GridFS, Redis, AWS S3, JWT authentication, WebRTC
+   Deployed: AWS with Auto Scaling Groups, Application Load Balancer, ElastiCache Redis, DocumentDB
+
+5. One Blood - Blood Donation Management System
+   Life-saving platform serving 50+ hospitals managing 100,000+ donor records and 25,000+ annual donations. Comprehensive donor registration with automated eligibility screening (50+ health criteria) reducing unsafe donations by 95%. Blood inventory tracking 10,000+ units across 8 blood types with real-time stock monitoring and expiration alerts preventing 99% of shortages. Intelligent appointment scheduling with SMS reminders (Twilio API) reducing no-shows from 25% to 8%. Revolutionary donor matching algorithm implementing blood type compatibility rules reducing emergency fulfillment time from 4 hours to 45 minutes. Gamification system increasing repeat donations by 60%.
+   Tech: React 18, Spring Boot 3, PostgreSQL with read replicas, Hibernate/JPA, Java 17, Redis, Twilio SMS API, SendGrid, AWS SES
+   Deployed: AWS RDS Multi-AZ, EC2 Auto Scaling, CloudWatch monitoring (99.97% uptime)
+
+TRAINING:
+- Zuitt AWS Bootcamp - Cloud Architecture & Serverless (Lambda, DynamoDB, API Gateway)
+- Zuitt Java Bootcamp - Backend Engineering (Spring Boot, JWT authentication)
+- Accenture Technology Academy - Backend Development & DevOps (Docker, Maven)
+
+EDUCATION:
+Bachelor of Science in Information Technology
+Cebu Institute of Technology - University (2020-2024)
+
+KEY STRENGTHS:
+- Expert problem-solver with systematic debugging and root cause analysis
+- Proven technical leader with 98% stakeholder satisfaction
+- Agile champion (Scrum, sprint planning, velocity optimization)
+- Rapid learner (tRPC in 3 days, Prisma in 2 days)
+- Quality-obsessed (85%+ test coverage, SOLID principles, clean code)
+- Mentor accelerating junior developer growth by 40%
+- Proactive leader delivering projects 2-3 days ahead of schedule
+
+AVAILABILITY:
+Preferred interview times: Thu/Fri 3-5 PM PHT (GMT+8), flexible scheduling, open to remote/hybrid/relocation

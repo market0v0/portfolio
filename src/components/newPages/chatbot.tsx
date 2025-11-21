@@ -75,6 +75,26 @@ const Chatbot: React.FC = () => {
   const handleSendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return
 
+    // Check for /call command
+    if (inputMessage.trim().toLowerCase() === '/call') {
+      const userMessage: Message = {
+        role: 'user',
+        content: inputMessage,
+        timestamp: new Date(),
+      }
+
+      const assistantMessage: Message = {
+        role: 'assistant',
+        content: "Ready to have a voice conversation with Mark's AI assistant, Tina? Click the button below to start the interview!",
+        timestamp: new Date(),
+        suggestInterview: true,
+      }
+
+      setMessages((prev) => [...prev, userMessage, assistantMessage])
+      setInputMessage('')
+      return
+    }
+
     const userMessage: Message = {
       role: 'user',
       content: inputMessage,
@@ -138,7 +158,7 @@ const Chatbot: React.FC = () => {
     "What are Mark's technical skills?",
     "Tell me about Mark's work experience",
     "What projects has Mark worked on?",
-    "What are Mark's AI/ML capabilities?",
+    "/call - Start voice interview",
   ]
 
   const handleSuggestedQuestion = (question: string) => {

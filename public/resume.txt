@@ -57,6 +57,12 @@ Software Engineer | Softype Inc. (Jan 2025 - Present)
 
 TECHNICAL SKILLS
 
+Full-Stack Development Stacks (Expert Level - 3+ years production experience)
+- MERN Stack: MongoDB (NoSQL database with Mongoose ODM), Express.js (Node.js framework), React.js (frontend library), Node.js (JavaScript runtime) - Built 5+ production applications processing 100K+ monthly users
+- T3 Stack: Next.js 13/14 (React framework with App Router), tRPC (end-to-end type-safe APIs), Prisma (type-safe ORM), TypeScript (strongly-typed JavaScript), Tailwind CSS - Modern full-stack with complete type safety
+- Database Combinations: Neon PostgreSQL (serverless Postgres with branching), MongoDB Atlas (cloud-hosted NoSQL), Prisma with PostgreSQL (relational data modeling), Supabase (PostgreSQL with real-time subscriptions)
+- Production Experience: Deployed MERN applications on AWS/Heroku, T3 Stack apps on Vercel with edge functions, handled database migrations, implemented connection pooling, and optimized query performance
+
 Frontend Development (Expert Level - 3+ years production experience)
 - Languages: TypeScript (advanced generics, utility types, conditional types), JavaScript ES2023+, HTML5 (semantic markup, accessibility), CSS3 (Grid, Flexbox, custom properties)
 - Modern Frameworks: React.js 18+ (Hooks, Context, Suspense, Concurrent Features, Server Components), Next.js 13/14 (App Router, Server Actions, ISR, SSG), Vue.js 3 (Composition API)
@@ -72,6 +78,7 @@ Frontend Development (Expert Level - 3+ years production experience)
 Backend Development (Expert Level - 3+ years production experience)
 - Languages: Java 17+ (streams, lambdas, optional, records), Python 3.11+ (type hints, async/await), Node.js 18+ (ES modules, streams, worker threads), TypeScript
 - Enterprise Frameworks: Spring Boot 3 (Spring Data JPA, Spring Security, Spring Cloud), Express.js (middleware, routing), Flask, Django (ORM, admin panel)
+- Full-Stack Architectures: MERN Stack (MongoDB, Express, React, Node.js), T3 Stack (TypeScript, tRPC, Tailwind, Prisma, Next.js)
 - API Design Excellence: RESTful APIs (OpenAPI/Swagger documentation, HATEOAS), GraphQL (Apollo Server, DataLoader for N+1 prevention), tRPC (end-to-end type safety), WebSockets (Socket.io)
 - Authentication & Security: JWT (access/refresh tokens), OAuth 2.0/OIDC, Session management, RBAC/ABAC, bcrypt password hashing, CORS configuration, rate limiting, OWASP Top 10 mitigation
 - Microservices Architecture: Service decomposition, API Gateway patterns, service mesh, distributed transactions (Saga pattern), event sourcing, CQRS
@@ -109,13 +116,15 @@ Artificial Intelligence & Machine Learning (Intermediate Level - 1+ year experie
 Databases (Expert Level - 3+ years production experience)
 - Relational Databases:
   * PostgreSQL (advanced queries, window functions, CTEs, JSONB, full-text search, partitioning, replication, pg_stat monitoring)
+  * Neon DB (serverless PostgreSQL, auto-scaling, branching for development workflows, edge computing integration)
   * MySQL (InnoDB engine, query optimization, indexing strategies, stored procedures, triggers)
   * SQL Server (T-SQL, execution plans, index tuning, Always On availability groups)
 - NoSQL Databases:
-  * MongoDB (aggregation pipeline, schema design, sharding, replica sets, indexes, change streams, transactions)
+  * MongoDB (aggregation pipeline, schema design, sharding, replica sets, indexes, change streams, transactions, Atlas cloud platform)
   * DynamoDB (single-table design, partition keys, sort keys, GSI/LSI, DynamoDB Streams, DAX caching)
   * Redis (data structures, pub/sub, Lua scripts, clustering, persistence strategies, cache patterns)
-- ORMs & Query Builders: Prisma (schema migrations, type safety), Hibernate/JPA (entity relationships, lazy/eager loading, N+1 prevention), TypeORM, Sequelize, Mongoose
+- ORMs & Query Builders: Prisma (PostgreSQL/MySQL/MongoDB, schema migrations, type safety, Prisma Studio), Hibernate/JPA (entity relationships, lazy/eager loading, N+1 prevention), TypeORM, Sequelize, Mongoose
+- Modern Database Solutions: Prisma + PostgreSQL (type-safe queries, auto-generated client), Prisma + Neon (serverless edge deployment), MongoDB + Mongoose (schema validation, middleware hooks)
 - Database Design: Normalization (1NF-3NF, BCNF), denormalization strategies, schema design patterns, index optimization, query performance tuning
 - Advanced Concepts: Database transactions (ACID properties), isolation levels, optimistic/pessimistic locking, connection pooling, read replicas, sharding, partitioning
 - Database Migration: Flyway, Liquibase, Alembic, Prisma Migrate, zero-downtime migrations, rollback strategies

@@ -7,7 +7,7 @@ import path from 'path';
 import fs from 'fs';
 import { PDFDocument } from 'pdf-lib';
 
-// Cache for the resume content
+// Cache for the resume content (cleared on file change)
 let resumeCache: string | null = null;
 
 async function loadResume(): Promise<string> {
@@ -16,7 +16,15 @@ async function loadResume(): Promise<string> {
   }
 
   try {
-    // Load resume.txt
+    // Load resume_summary.txt (optimized for Groq free tier to avoid timeouts)
+    const summaryPath = path.join(process.cwd(), 'public', 'resume_summary.txt');
+    if (fs.existsSync(summaryPath)) {
+      const text = fs.readFileSync(summaryPath, 'utf-8');
+      resumeCache = text;
+      return text;
+    }
+
+    // Fallback to full resume.txt if summary doesn't exist
     const textPath = path.join(process.cwd(), 'public', 'resume.txt');
     if (fs.existsSync(textPath)) {
       const text = fs.readFileSync(textPath, 'utf-8');
@@ -62,12 +70,22 @@ export default async function handler(
     // Load resume content from PDF
     const resumeContent = await loadResume();
 
+    // Check if API key exists
+    if (!process.env.GROQ_API_KEY) {
+      console.error('GROQ_API_KEY not found in environment variables')
+      return res.status(500).json({
+        error: 'API key not configured',
+        details: 'GROQ_API_KEY is missing'
+      });
+    }
+
     // Initialize Groq Chat Model with faster settings
     const model = new ChatGroq({
       apiKey: process.env.GROQ_API_KEY,
       model: 'llama-3.1-8b-instant', // Fast Groq model
       temperature: 0.7,
       maxTokens: 300, // Keep responses short for voice
+      timeout: 30000, // 30 second timeout
     });
 
     // Format conversation history
@@ -138,19 +156,25 @@ Instructions:
 - If they ask something specific about Mark, give more details
 - If they want a list, keep it to 3-5 top items with brief descriptions
 
-INTERVIEW DETECTION:
-- If the user mentions: hiring, interview, position, job opening, candidate, recruiting, employment opportunity, or similar hiring-related terms
-- Respond with EXACTLY this format (word-for-word):
+INTERVIEW DETECTION - CRITICAL:
+If the user's message contains ANY of these words or phrases:
+- interview, hire, hiring, job, position, opening, candidate, recruiting, recruiter, employment, employer, applying
+Then you MUST respond with EXACTLY this text (copy it word-for-word):
 "[INTERVIEW_SUGGEST] It sounds like you might be interested in interviewing Mark! Would you like to switch to interview mode for a more detailed, formal conversation with him?"
 
-Example style:
+DO NOT paraphrase. DO NOT change the wording. Copy it exactly as written above, including the [INTERVIEW_SUGGEST] tag at the start.
+
+Example:
+Question: "can i interview mark"
+Response: "[INTERVIEW_SUGGEST] It sounds like you might be interested in interviewing Mark! Would you like to switch to interview mode for a more detailed, formal conversation with him?"
+
+Question: "i wanna hire him"
+Response: "[INTERVIEW_SUGGEST] It sounds like you might be interested in interviewing Mark! Would you like to switch to interview mode for a more detailed, formal conversation with him?"
+
+For non-interview questions:
 Question: "What are Mark's skills?"
 Good: "Mark mainly works with React, TypeScript, and Next.js on the frontend. On the backend, he uses Spring Boot and Node.js. He's also been working with AWS and AI integration lately!"
 Bad (first person): "I work with React, TypeScript..." ❌
-Bad (too formal): "Mark has a wide range of technical skills that can be categorized into several areas. In Frontend Development, he is proficient in..." ❌
-
-Question: "I'm looking to hire a React developer"
-Good: "[INTERVIEW_SUGGEST] It sounds like you might be interested in interviewing Mark! Would you like to switch to interview mode for a more detailed, formal conversation with him?"
 
 Question: "What is the sun?"
 Good: "I'm here to answer questions about Mark's professional background and experience. Feel free to ask me about his skills, projects, or work history!"
@@ -174,16 +198,18 @@ Answer naturally in third person:
         question: message,
       }),
       new Promise((_resolve, reject) =>
-        setTimeout(() => reject(new Error('Request timeout')), 25000)
+        setTimeout(() => reject(new Error('Request timeout - Groq API took too long to respond')), 45000)
       )
     ]) as string;
 
     const duration = Date.now() - startTime
     console.log(`AI response received in ${duration}ms`)
+    console.log('AI Response:', response.substring(0, 200)) // Log first 200 chars
 
     // Check if response suggests interview mode
     const suggestInterview = response.includes('[INTERVIEW_SUGGEST]');
     const cleanResponse = response.replace('[INTERVIEW_SUGGEST]', '').trim();
+    console.log('Interview suggest flag:', suggestInterview)
 
     return res.status(200).json({
       response: cleanResponse,
