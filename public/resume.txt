@@ -37,31 +37,23 @@ Junior Software Engineer | Ease Solutions (Jun 2024 – Dec 2024)
 - Collaborated seamlessly with product owners translating complex business requirements into precise technical specifications, resulting in 98% stakeholder satisfaction rate
 
 Software Engineer | Softype Inc. (Jan 2025 - Present)
-- Driving digital transformation across multiple enterprise platforms including logistics management, shipping operations, and business intelligence tools, delivering solutions that process $2M+ in monthly transactions
-- Revolutionized component architecture by consolidating 50+ redundant React components into a unified design system, slashing bundle size by 35% (reducing load time from 4.2s to 2.7s) and improving developer productivity by 40%
-- Architected cutting-edge seat selection system on modern T3 Stack (Next.js 14, tRPC, Prisma, TypeScript) handling 10,000+ daily bookings with real-time availability synchronization and optimistic UI delivering instant user feedback
-- Engineered sophisticated data fetching infrastructure using React Query (TanStack Query) with intelligent caching strategies, achieving 90% cache hit rate and reducing API calls by 75%
-- Built production-grade Progressive Web App (PWA) supporting full offline functionality, serving 5,000+ daily offline users and maintaining 99.9% data sync accuracy when reconnecting
-- Implemented enterprise-scale client-side database using SQLite (sql.js) and IndexedDB managing 50MB+ offline datasets with sub-50ms query performance and automatic conflict resolution
-- Developed intelligent sync engine with operational transformation algorithms ensuring eventual consistency across 1,000+ concurrent users with zero data loss incidents
-- Created game-changing Jira integration automating 70% of manual ticket operations, eliminating 15 hours/week of administrative overhead and improving issue tracking accuracy by 95%
-- Built bidirectional enterprise integration between internal systems and Jira using event-driven architecture (RabbitMQ), processing 5,000+ daily events with guaranteed delivery and automatic retry mechanisms
-- Engineered real-time analytics platform aggregating data from Jira API, providing C-suite executives with actionable insights through 20+ interactive dashboards tracking sprint metrics, velocity trends, and team performance KPIs
-- Architected comprehensive multi-carrier shipping tracking system integrating FedEx, UPS, DHL APIs, processing 2,000+ daily shipments with real-time status updates and 99.5% tracking accuracy
-- Developed intelligent route optimization algorithm using Dijkstra's algorithm and Google Maps Distance Matrix API, reducing delivery times by 22% and fuel costs by 18%
-- Built sophisticated warehouse inventory management system with barcode scanning, real-time stock alerts, and predictive reorder workflows, reducing stockouts by 85% and overstock by 40%
-- Created customer-facing shipment portal serving 10,000+ monthly active users with digital signature capture, proof of delivery, and automated notification system achieving 4.8/5 customer satisfaction rating
-- Spearheaded development of dynamic sales pitching platform with drag-and-drop presentation builder, integrated CRM, and advanced analytics tracking conversion rates improving sales efficiency by 35%
-- Implemented real-time collaboration infrastructure using WebSockets (Socket.io) supporting 50+ concurrent editors with conflict-free replicated data types (CRDTs) ensuring seamless multi-user experience
-- Led critical microservices migration from monolithic PHP application, decomposing into 12 independent services improving deployment frequency from weekly to daily and reducing system downtime by 90%
-- Established comprehensive observability stack using Sentry, DataDog, and custom alerting reducing mean time to resolution (MTTR) from 4 hours to 30 minutes and achieving 99.95% uptime SLA
-- Excelled as key Scrum contributor driving Agile excellence through active participation in all ceremonies, maintaining 100% sprint commitment and consistently delivering high-priority features 2-3 days ahead of schedule
-- Empowered executive decision-making by building custom business intelligence dashboards aggregating data from 8+ sources, providing real-time KPIs that drove 20% improvement in operational efficiency
-- Accelerated team capability by mentoring 3 junior developers on modern React patterns, TypeScript best practices, and TDD methodology, reducing onboarding time by 50% and improving code quality metrics by 60%
-- Pioneered AI integration leveraging Claude/GPT-4 APIs for automated documentation generation, code review assistance, and intelligent test case creation, boosting developer productivity by 30%
-- Fostered culture of technical excellence through weekly knowledge sharing sessions, pair programming initiatives, and comprehensive code reviews maintaining 85%+ test coverage across all projects
-- Optimized CI/CD pipeline with GitHub Actions implementing automated testing, security scanning, and progressive deployment strategies, reducing deployment time by 50% (from 40min to 20min) and achieving zero-downtime deployments
-- Transformed infrastructure reliability through Docker containerization and blue-green deployment strategy on AWS (ECS, ALB), achieving 99.99% availability and enabling instant rollbacks
+- Built a Jira-integrated time tracking application with real-time worklog synchronization and comprehensive analytics dashboards for resource management
+- Developed a 6-tab reporting system (Worklogs, User Summary, Projects, Resource Management, Analytics, Distribution)
+- Enabled Top Performers tracking, Team Hours analysis, and inactive user monitoring for sprint retrospectives
+- Engineered role-based access control for team leads, with CSV export, billable/non-billable hour categorization, and flexible time summaries
+- Implemented production-ready autocomplete search with keyboard navigation, ARIA accessibility, debounced filtering, and 25+ unit tests
+- Built a high-performance caching layer using Redis-style in-memory storage and optimized batch processing to reduce API calls
+- Tech stack: React, Node.js, Express, Upstash Redis, Jira REST API, Jest
+- Developed a comprehensive ferry booking platform for passenger and freight transportation
+- Architected a multi-tenant SaaS system with 70+ tRPC routers handling passenger tickets, freight BOL, and real-time seat allocation
+- Integrated NetSuite ERP via OAuth 1.0 and custom RESTlet APIs to automate sales orders, invoicing, GL entries, and daily reconciliation
+- Built a payment processing system supporting Maya, GCash, and traditional methods with VAT-compliant calculations and audit logging
+- Developed manifest generation and gate operations modules to ensure maritime compliance and streamline boarding workflows
+- Enabled operations team to manage 30+ vessel types across multiple routes, improving booking efficiency and regulatory compliance by 35%
+- Delivered real-time dashboards for vessel capacity, revenue analytics, and route performance
+- Tech stack: T3 Stack (Next.js, TypeScript, tRPC, Prisma), PostgreSQL, Redis, NetSuite APIs, Chart.js
+- Strengthened team collaboration through effective Scrum ceremonies and Jira workflow alignment
+- Explored prompt engineering and AI integration to enhance internal tooling and reporting workflows
 
 TECHNICAL SKILLS
 

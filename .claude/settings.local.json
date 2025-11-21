@@ -5,7 +5,14 @@
       "Bash(grep:*)",
       "Bash(npm run build:*)",
       "Bash(npm install:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(if [ -f .env.local ])",
+      "Bash(then echo \"File exists\")",
+      "Bash(else echo \"No .env.local file\")",
+      "Bash(fi)",
+      "Bash(curl -X POST http://localhost:3002/api/chat -H \"Content-Type: application/json\" -d \"{\"\"message\"\":\"\"test\"\",\"\"mode\"\":\"\"chat\"\"}\")",
+      "Bash(curl -X POST http://localhost:3002/api/chat -H \"Content-Type: application/json\" -d \"{\"\"message\"\":\"\"What is Mark''s experience?\"\",\"\"mode\"\":\"\"chat\"\"}\")",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

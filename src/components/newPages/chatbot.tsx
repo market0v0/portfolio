@@ -5,6 +5,7 @@ interface Message {
   role: 'user' | 'assistant'
   content: string
   timestamp: Date
+  suggestInterview?: boolean
 }
 
 const STORAGE_KEY = 'mark-chatbot-history'
@@ -109,6 +110,7 @@ const Chatbot: React.FC = () => {
         role: 'assistant',
         content: data.response,
         timestamp: new Date(),
+        suggestInterview: data.suggestInterview || false,
       }
 
       setMessages((prev) => [...prev, assistantMessage])
@@ -141,6 +143,20 @@ const Chatbot: React.FC = () => {
 
   const handleSuggestedQuestion = (question: string) => {
     setInputMessage(question)
+  }
+
+  const handleInterviewAccept = () => {
+    // Open interview page in new tab
+    window.open('/interview', '_blank')
+  }
+
+  const handleInterviewDecline = (messageIndex: number) => {
+    // Remove the interview suggestion flag from this message
+    setMessages((prev) =>
+      prev.map((msg, idx) =>
+        idx === messageIndex ? { ...msg, suggestInterview: false } : msg
+      )
+    )
   }
 
   return (
@@ -196,35 +212,56 @@ const Chatbot: React.FC = () => {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 space-y-4">
             {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`flex ${
-                  message.role === 'user' ? 'justify-end' : 'justify-start'
-                }`}
-              >
+              <div key={index}>
                 <div
-                  className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-3 sm:px-4 py-2 sm:py-3 ${
-                    message.role === 'user'
-                      ? 'bg-gradient-to-r from-primary to-purple-500 text-white'
-                      : 'bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-glass-border text-gray-900 dark:text-dark-text'
+                  className={`flex ${
+                    message.role === 'user' ? 'justify-end' : 'justify-start'
                   }`}
                 >
-                  <p className="text-[0.85rem] sm:text-[0.9rem] whitespace-pre-wrap break-words">
-                    {message.content}
-                  </p>
-                  <p
-                    className={`text-xs mt-1 ${
+                  <div
+                    className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-3 sm:px-4 py-2 sm:py-3 ${
                       message.role === 'user'
-                        ? 'text-white/70'
-                        : 'text-gray-500 dark:text-dark-text-secondary'
+                        ? 'bg-gradient-to-r from-primary to-purple-500 text-white'
+                        : 'bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-glass-border text-gray-900 dark:text-dark-text'
                     }`}
                   >
-                    {message.timestamp.toLocaleTimeString([], {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </p>
+                    <p className="text-[0.85rem] sm:text-[0.9rem] whitespace-pre-wrap break-words">
+                      {message.content}
+                    </p>
+                    <p
+                      className={`text-xs mt-1 ${
+                        message.role === 'user'
+                          ? 'text-white/70'
+                          : 'text-gray-500 dark:text-dark-text-secondary'
+                      }`}
+                    >
+                      {message.timestamp.toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </p>
+                  </div>
                 </div>
+
+                {/* Interview Suggestion Buttons */}
+                {message.suggestInterview && message.role === 'assistant' && (
+                  <div className="flex justify-start mt-3">
+                    <div className="flex gap-2">
+                      <button
+                        onClick={handleInterviewAccept}
+                        className="px-4 py-2 rounded-xl bg-gradient-to-r from-primary to-purple-500 text-white text-sm font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
+                      >
+                        Yes, start interview
+                      </button>
+                      <button
+                        onClick={() => handleInterviewDecline(index)}
+                        className="px-4 py-2 rounded-xl border border-gray-300 dark:border-glass-border bg-white dark:bg-white/5 text-gray-900 dark:text-dark-text text-sm font-medium hover:bg-gray-50 dark:hover:bg-white/10 transition-all duration-300"
+                      >
+                        No, keep chatting
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
 

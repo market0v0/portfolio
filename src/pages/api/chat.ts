@@ -16,7 +16,7 @@ async function loadResume(): Promise<string> {
   }
 
   try {
-    // Try to load from text file first (manual extraction)
+    // Load resume.txt
     const textPath = path.join(process.cwd(), 'public', 'resume.txt');
     if (fs.existsSync(textPath)) {
       const text = fs.readFileSync(textPath, 'utf-8');
@@ -53,7 +53,7 @@ export default async function handler(
   }
 
   try {
-    const { message, history = [] } = req.body;
+    const { message, history = [], mode = 'chat' } = req.body;
 
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
@@ -62,11 +62,12 @@ export default async function handler(
     // Load resume content from PDF
     const resumeContent = await loadResume();
 
-    // Initialize Groq Chat Model
+    // Initialize Groq Chat Model with faster settings
     const model = new ChatGroq({
       apiKey: process.env.GROQ_API_KEY,
-      model: 'llama-3.3-70b-versatile',
+      model: 'llama-3.1-8b-instant', // Fast Groq model
       temperature: 0.7,
+      maxTokens: 300, // Keep responses short for voice
     });
 
     // Format conversation history
@@ -76,11 +77,48 @@ export default async function handler(
     }
 
     const conversationHistory = history.length > 0
-      ? '\n\nConversation History:\n' + history.map((msg: HistoryMessage) => `${msg.role === 'user' ? 'User' : 'Tina'}: ${msg.content}`).join('\n')
+      ? '\n\nConversation History:\n' + history.map((msg: HistoryMessage) => `${msg.role === 'user' ? 'User' : (mode === 'interview' ? 'Mark' : 'Tina')}: ${msg.content}`).join('\n')
       : '';
 
-    // Create a prompt template
-    const prompt = PromptTemplate.fromTemplate(`
+    // Create appropriate prompt based on mode
+    let prompt;
+
+    if (mode === 'interview') {
+      // Interview mode: AI responds AS Mark in first person
+      prompt = PromptTemplate.fromTemplate(`
+You are Mark Vincent A. Cueva, a Software Engineer, having a professional interview conversation with a potential employer.
+
+Your Resume/Background:
+{resume}
+{history}
+
+Employer's Question: {question}
+
+Instructions:
+- Respond AS Mark in FIRST PERSON ("I", "my", "I've worked on...")
+- Give detailed, professional, articulate responses suitable for a job interview
+- Show enthusiasm and passion for your work
+- Provide specific examples and metrics when relevant
+- Keep responses conversational but professional (3-6 sentences typically)
+- If asked technical questions, demonstrate deep expertise
+- If asked behavioral questions, use STAR method (Situation, Task, Action, Result)
+- You can ask clarifying questions back to the employer
+- Be authentic and personable - let your personality shine through
+- Focus on achievements, impact, and problem-solving abilities
+
+Example style:
+Question: "Tell me about your experience with React"
+Good: "I've been working with React professionally for over 3 years now, and it's become my go-to framework for frontend development. At Softype, I recently architected a seat selection system using the modern T3 Stack with Next.js 14, which handles 10,000+ daily bookings. I'm particularly passionate about performance optimization - I reduced our bundle size by 35% by consolidating our component library. I also love mentoring other developers on React best practices!"
+
+Question: "What's your biggest achievement?"
+Good: "I'd say architecting the PWA system at Softype stands out. We needed full offline functionality for 5,000+ daily users, so I built a client-side database using SQLite and IndexedDB with an intelligent sync engine. The challenging part was handling concurrent updates from 1,000+ users without data loss. I implemented operational transformation algorithms, and we've had zero data loss incidents since launch. Seeing it work seamlessly in production was incredibly rewarding!"
+
+Respond naturally and professionally as Mark:
+`);
+    } else {
+      // Chat mode: AI is Tina, Mark's assistant (third person)
+      // PLUS interview detection
+      prompt = PromptTemplate.fromTemplate(`
 You are Tina, Mark's friendly AI assistant. Talk like a real person having a casual conversation - keep it short, natural, and human.
 
 Resume Info:
@@ -100,11 +138,19 @@ Instructions:
 - If they ask something specific about Mark, give more details
 - If they want a list, keep it to 3-5 top items with brief descriptions
 
+INTERVIEW DETECTION:
+- If the user mentions: hiring, interview, position, job opening, candidate, recruiting, employment opportunity, or similar hiring-related terms
+- Respond with EXACTLY this format (word-for-word):
+"[INTERVIEW_SUGGEST] It sounds like you might be interested in interviewing Mark! Would you like to switch to interview mode for a more detailed, formal conversation with him?"
+
 Example style:
 Question: "What are Mark's skills?"
 Good: "Mark mainly works with React, TypeScript, and Next.js on the frontend. On the backend, he uses Spring Boot and Node.js. He's also been working with AWS and AI integration lately!"
 Bad (first person): "I work with React, TypeScript..." ❌
 Bad (too formal): "Mark has a wide range of technical skills that can be categorized into several areas. In Frontend Development, he is proficient in..." ❌
+
+Question: "I'm looking to hire a React developer"
+Good: "[INTERVIEW_SUGGEST] It sounds like you might be interested in interviewing Mark! Would you like to switch to interview mode for a more detailed, formal conversation with him?"
 
 Question: "What is the sun?"
 Good: "I'm here to answer questions about Mark's professional background and experience. Feel free to ask me about his skills, projects, or work history!"
@@ -112,23 +158,45 @@ Bad: "The sun is a star..." ❌
 
 Answer naturally in third person:
 `);
+    }
 
     // Create the chain
     const chain = prompt.pipe(model).pipe(new StringOutputParser());
 
-    // Invoke the chain
-    const response = await chain.invoke({
-      resume: resumeContent,
-      history: conversationHistory,
-      question: message,
-    });
+    console.log('Invoking AI model...')
+    const startTime = Date.now()
 
-    return res.status(200).json({ response });
+    // Invoke the chain with timeout
+    const response = await Promise.race([
+      chain.invoke({
+        resume: resumeContent,
+        history: conversationHistory,
+        question: message,
+      }),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Request timeout')), 25000)
+      )
+    ]) as string;
+
+    const duration = Date.now() - startTime
+    console.log(`AI response received in ${duration}ms`)
+
+    // Check if response suggests interview mode
+    const suggestInterview = response.includes('[INTERVIEW_SUGGEST]');
+    const cleanResponse = response.replace('[INTERVIEW_SUGGEST]', '').trim();
+
+    return res.status(200).json({
+      response: cleanResponse,
+      suggestInterview: mode === 'chat' ? suggestInterview : false
+    });
   } catch (error) {
     console.error('Chat API error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    console.error('Error details:', errorMessage)
+
     return res.status(500).json({
       error: 'Failed to process chat request',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: errorMessage
     });
   }
 }
