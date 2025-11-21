@@ -12,7 +12,8 @@
       "Bash(fi)",
       "Bash(curl -X POST http://localhost:3002/api/chat -H \"Content-Type: application/json\" -d \"{\"\"message\"\":\"\"test\"\",\"\"mode\"\":\"\"chat\"\"}\")",
       "Bash(curl -X POST http://localhost:3002/api/chat -H \"Content-Type: application/json\" -d \"{\"\"message\"\":\"\"What is Mark''s experience?\"\",\"\"mode\"\":\"\"chat\"\"}\")",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

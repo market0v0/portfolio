@@ -173,7 +173,7 @@ Answer naturally in third person:
         history: conversationHistory,
         question: message,
       }),
-      new Promise((_, reject) =>
+      new Promise((_resolve, reject) =>
         setTimeout(() => reject(new Error('Request timeout')), 25000)
       )
     ]) as string;
