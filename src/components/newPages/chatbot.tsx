@@ -6,6 +6,7 @@ interface Message {
   content: string
   timestamp: Date
   suggestInterview?: boolean
+  suggestInvite?: boolean
 }
 
 const STORAGE_KEY = 'mark-chatbot-history'
@@ -74,6 +75,22 @@ const Chatbot: React.FC = () => {
 
   const handleSendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return
+
+    // /invite: hidden meeting-invite page, only reachable by URL or this command
+    if (inputMessage.trim().toLowerCase() === '/invite') {
+      setMessages((prev) => [
+        ...prev,
+        { role: 'user', content: inputMessage, timestamp: new Date() },
+        {
+          role: 'assistant',
+          content: "You've unlocked Mark's private invite ✦ Tell him when you're free and how you'd like to hang out: a call, a video chat or in person.",
+          timestamp: new Date(),
+          suggestInvite: true
+        }
+      ])
+      setInputMessage('')
+      return
+    }
 
     // Check for /call command
     if (inputMessage.trim().toLowerCase() === '/call') {
@@ -262,6 +279,18 @@ const Chatbot: React.FC = () => {
                     </p>
                   </div>
                 </div>
+
+                {message.suggestInvite === true && message.role === 'assistant' && (
+                  <div className="flex justify-start mt-3">
+                    <a
+                      href="/invite"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-primary to-purple-500 text-white text-sm font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
+                    >
+                      Open invite
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                )}
 
                 {/* Interview Suggestion Buttons */}
                 {message.suggestInterview && message.role === 'assistant' && (

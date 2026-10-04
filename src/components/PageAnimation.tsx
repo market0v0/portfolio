@@ -8,8 +8,8 @@ interface AnimatedSectionProps {
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children }) => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.5
+    triggerOnce: true,
+    threshold: 0.1
   })
 
   const skillsetVariants = {

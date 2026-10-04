@@ -10,7 +10,7 @@ const Project: React.FC<ProjectProps> = ({ img, title, desc, tech, repository, f
 
   if (featured) {
     return (
-      <article className='group relative overflow-hidden rounded-3xl border border-light-border  shadow-lg backdrop-blur-2xl transition-all duration-500 hover:border-primary/40 hover:shadow-glass-lg dark:border-glass-border dark:bg-glass-gradient dark:shadow-glass'>
+      <article className='spotlight group relative overflow-hidden rounded-3xl border border-light-border  shadow-lg backdrop-blur-2xl transition-all duration-500 hover:border-primary/40 hover:shadow-glass-lg dark:border-glass-border dark:bg-glass-gradient dark:shadow-glass'>
         {/* Multi-layer glow effects */}
         <div className='pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 opacity-0 blur-xl transition-opacity duration-700 group-hover:opacity-100' />
         <div className='pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-primary/10 via-purple-500/10 to-transparent opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100' />
@@ -110,7 +110,7 @@ const Project: React.FC<ProjectProps> = ({ img, title, desc, tech, repository, f
 
   // Grid project card - Compact, uniform design
   return (
-    <article className='group relative flex h-full flex-col overflow-hidden rounded-2xl border border-light-border  shadow-lg backdrop-blur-2xl transition-all duration-500 hover:border-primary/40 hover:shadow-glass-lg dark:border-glass-border dark:bg-glass-gradient dark:shadow-glass'>
+    <article className='spotlight group relative flex h-full flex-col overflow-hidden rounded-2xl border border-light-border  shadow-lg backdrop-blur-2xl transition-all duration-500 hover:border-primary/40 hover:shadow-glass-lg dark:border-glass-border dark:bg-glass-gradient dark:shadow-glass'>
       {/* Subtle outer glow on hover */}
       <div className='pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/15 via-purple-500/15 to-transparent opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-100' />
 

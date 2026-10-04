@@ -39,6 +39,10 @@ module.exports = {
           text: '#111827',
           'text-secondary': '#6B7280'
         },
+        // /invite page (yellow collage theme)
+        ink: '#111111',
+        sun: '#FFD60A',
+        paper: '#FFFDF5',
         glass: {
           border: 'rgba(255, 255, 255, 0.1)',
           bg: 'rgba(255, 255, 255, 0.05)'

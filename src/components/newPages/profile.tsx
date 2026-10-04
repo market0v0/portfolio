@@ -1,52 +1,105 @@
 import React from 'react'
 import AnimatedSection from '../PageAnimation'
 
+const strengths = [
+  {
+    title: 'ERP integrations that balance to the centavo',
+    body: 'Two-way NetSuite sync with SuiteScript RESTlets: Sales Orders, Item Fulfillment, Customer Deposits and Refunds, wired into freight billing, VAT and withholding tax.',
+    icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
+  },
+  {
+    title: 'AI-native engineering',
+    body: 'Claude Code subagents, project skills and AI code review in CI that speed up the whole team.',
+    icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
+  },
+  {
+    title: 'Production delivery',
+    body: 'Client demos, UAT, go-live support and retraining for a SaaS running real shipping operations.',
+    icon: 'M5 13l4 4L19 7'
+  },
+  {
+    title: 'Quality by default',
+    body: 'Playwright E2E on nightly CI with per-role auth, plus Vitest suites around billing-critical logic.',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+  },
+  {
+    title: 'Data you can act on',
+    body: 'Finance reconciliation, exports and SofTrack analytics with Redis caching and event-driven Jira sync.',
+    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'
+  }
+]
+
 const Profile: React.FC = () => {
   return (
     <AnimatedSection>
     <div className='flex z-10 flex-col items-center min-h-screen justify-center py-20' id="profile">
       <div className='w-full max-w-6xl px-4'>
         <div className='mb-16'>
+          <p className='mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary'>About</p>
           <h2 className='mb-3 text-[2rem] font-semibold text-light-text lg:text-[2.5rem] dark:text-dark-text'>
             About me
           </h2>
-          <p className='text-light-text-secondary dark:text-dark-text-secondary'>Get to know more about my background and expertise</p>
+          <p className='text-[1.05rem] text-light-text-secondary dark:text-dark-text-secondary'>Engineer, integrator, and AI tooling builder</p>
         </div>
 
-        <div className='group relative overflow-hidden rounded-2xl border border-light-border p-8 shadow-lg backdrop-blur-2xl transition-all dark:border-glass-border dark:bg-glass-gradient dark:shadow-none lg:p-12'>
+        <div className='spotlight group relative overflow-hidden rounded-2xl border border-light-border p-8 shadow-lg backdrop-blur-2xl transition-all dark:border-glass-border dark:bg-glass-gradient dark:shadow-none lg:p-12'>
           {/* Glass shine effect */}
           <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-white/5' />
 
-          <div className='relative z-10 grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-12'>
+          <div className='relative z-10 grid grid-cols-1 items-center gap-10 xl:grid-cols-2 xl:gap-12'>
             <div className='flex justify-center xl:justify-start'>
-              <div className='overflow-hidden rounded-2xl border border-light-border bg-white/50 p-2 dark:border-glass-border dark:bg-dark-card/50'>
-                <img
-                  src='/profile1.svg'
-                  alt='Mark Vincent Cueva'
-                  className='h-full w-full max-w-md rounded-xl object-cover'
-                />
+              <div className='group/photo relative w-full max-w-md'>
+                {/* Outer glow */}
+                <div className='absolute -inset-1 rounded-[1.75rem] bg-gradient-to-br from-primary via-purple-500 to-primary-light opacity-40 blur-xl transition-opacity duration-700 group-hover/photo:opacity-70' />
+
+                {/* Gradient ring + backdrop */}
+                <div className='relative rounded-[1.6rem] bg-gradient-to-br from-primary/80 via-purple-400/40 to-primary-light/80 p-[2px]'>
+                  <div className='relative aspect-square overflow-hidden rounded-[1.5rem] bg-[#140b28]'>
+                    <img
+                      src='/profile-photo.jpg'
+                      alt='Mark Vincent Cueva'
+                      loading='lazy'
+                      className='h-full w-full object-cover transition-transform duration-700 ease-out group-hover/photo:scale-[1.04]'
+                    />
+                  </div>
+                </div>
+
+                {/* Floating chips */}
+                <div className='absolute -left-3 top-8 flex items-center gap-2 rounded-xl border border-light-border bg-white/80 px-3 py-2 text-xs font-semibold text-light-text shadow-glass backdrop-blur-xl transition-transform duration-500 group-hover/photo:-translate-y-1 dark:border-glass-border dark:bg-dark-card/80 dark:text-dark-text sm:-left-6 sm:text-sm'>
+                  <span className='relative flex h-2 w-2'>
+                    <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75' />
+                    <span className='relative inline-flex h-2 w-2 rounded-full bg-emerald-400' />
+                  </span>
+                  Senior SWE @ Softype
+                </div>
+                <div className='absolute -right-3 bottom-10 rounded-xl border border-light-border bg-white/80 px-3 py-2 text-xs font-semibold text-light-text shadow-glass backdrop-blur-xl transition-transform duration-500 group-hover/photo:translate-y-1 dark:border-glass-border dark:bg-dark-card/80 dark:text-dark-text sm:-right-6 sm:text-sm'>
+                  <span className='text-primary'>✦</span> AI-native engineering
+                </div>
+                <div className='absolute bottom-4 left-4 hidden rounded-lg bg-black/40 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md sm:block'>
+                  📍 Cebu, Philippines
+                </div>
               </div>
             </div>
 
             <div className='space-y-6'>
               <div className='space-y-4 text-[1rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary lg:text-[1.1rem]'>
                 <p>
-                  I&apos;m a <span className='font-semibold text-light-text dark:text-dark-text'>Software Engineer</span> with professional experience at Softype Inc.,
-                  Ease Solutions, and Alliance Software Inc. I graduated with a Bachelor of Science in
-                  Information Technology from Cebu Institute of Technology University.
+                  I&apos;m a <span className='font-semibold text-light-text dark:text-dark-text'>Senior Software Engineer</span> at Softype Inc. with 2.5+ years
+                  shipping production systems, promoted to senior 15 months in. Before that I built Jira plugins at
+                  Ease Solutions and KYC and data pipelines at Alliance Software. I hold a BS in Information Technology
+                  from Cebu Institute of Technology University.
                 </p>
 
                 <p>
-                  I specialize in <span className='font-semibold text-light-text dark:text-dark-text'>full-stack development</span> with expertise in React, TypeScript, Next.js,
-                  Spring Boot, and cloud technologies. I&apos;ve delivered impactful solutions including
-                  offline PWA capabilities, seat selection systems, customer KYC flows, and Azure-based
-                  automation pipelines.
+                  I&apos;m a core engineer on <span className='font-semibold text-light-text dark:text-dark-text'>Aquarius 2.0</span>, a multi-tenant maritime SaaS
+                  that went live for a major Philippine shipping line in 2026. I own its NetSuite ERP integration and
+                  billing-critical freight workflows, and I work directly with the client through demos, UAT and go-live.
                 </p>
 
                 <p>
-                  I embrace <span className='font-semibold text-light-text dark:text-dark-text'>emerging technologies</span> like AI agents and prompt engineering,
-                  fostering innovation in team collaboration. I thrive in Agile environments and am passionate
-                  about building scalable, intelligent, user-centric applications.
+                  I build <span className='font-semibold text-light-text dark:text-dark-text'>AI-native engineering workflows</span>: Claude Code subagents, project
+                  skills and AI code review in CI, alongside LLM features like LangChain RAG reporting and OCR
+                  document pipelines.
                 </p>
               </div>
 
@@ -79,6 +132,26 @@ const Profile: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* What I bring */}
+        <div className='mt-10 grid gap-4 md:grid-cols-3'>
+          {strengths.map((item, index) => (
+            <div
+              key={item.title}
+              className={`spotlight group relative overflow-hidden rounded-2xl border border-light-border p-6 shadow-lg backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-glass-lg dark:border-glass-border dark:bg-glass-gradient dark:shadow-none ${index === 0 ? 'md:col-span-2' : ''}`}
+            >
+              <div className='relative z-10'>
+                <div className='mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-purple-500 text-white shadow-glow transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110'>
+                  <svg className='h-5 w-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d={item.icon} />
+                  </svg>
+                </div>
+                <h3 className='mb-2 text-[1.15rem] font-semibold text-light-text dark:text-dark-text'>{item.title}</h3>
+                <p className='text-[0.95rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary'>{item.body}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

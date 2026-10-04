@@ -12,7 +12,7 @@ interface TrainingProps {
 const Training: React.FC<TrainingProps> = ({ label, img, images, date, body }) => {
   return (
     <AnimatedSection>
-      <div className='group relative flex h-full flex-col overflow-hidden rounded-2xl border border-light-border  p-6 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-glass dark:border-glass-border dark:bg-glass-gradient dark:shadow-none'>
+      <div className='spotlight group relative flex h-full flex-col overflow-hidden rounded-2xl border border-light-border  p-6 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-glass dark:border-glass-border dark:bg-glass-gradient dark:shadow-none'>
         {/* Glass shine effect */}
         <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-white/5' />
 

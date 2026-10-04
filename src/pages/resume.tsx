@@ -1,6 +1,7 @@
 import React from 'react'
 import { MyContextProvider } from '@/components/context/context'
 import Navigation from '@/components/nav/nav'
+import { experienceData } from '@/pages/api/data'
 
 const Resume: React.FC = () => {
   const handleDownloadResume = (): void => {
@@ -9,47 +10,6 @@ const Resume: React.FC = () => {
     link.setAttribute('download', 'CUEVA_MARKVINCENT_CV.pdf')
     link.click()
   }
-
-  const experiences = [
-    {
-      title: 'Software Engineer',
-      company: 'Softype Inc.',
-      period: 'Jan 2025 - Present',
-      achievements: [
-        'Unified redundant components to streamline performance and reduce system complexity',
-        'Developed seat selection logic on the T3 stack with optimized data fetching strategies',
-        'Implemented offline capabilities using PWA, Service Workers, and SQLite for resilient data access',
-        'Strengthened team collaboration through effective Scrum ceremonies and Jira workflow alignment',
-        'Provided key insights to management by identifying relevant data needs and improving reporting clarity',
-        'Fostered a healthy co-working culture and embraced emerging technologies like prompt engineering',
-        'Built customer and pitching portals to support client demos and stakeholder engagement'
-      ]
-    },
-    {
-      title: 'Junior Software Engineer',
-      company: 'Ease Solutions',
-      period: 'Jun 2024 - Dec 2024',
-      achievements: [
-        'Contributed to a dictionary feature enhancement in a custom Jira plugin',
-        'Optimized tree and node data fetching via Spring APIs for improved performance',
-        'Built Selenium-based test automation for UI validation and regression coverage',
-        'Strengthened understanding of Jira workflows and issue tracking through active sprint participation',
-        'Collaborated effectively within a Scrum team, improving coordination and delivery across sprint cycles',
-        'Participated in backlog grooming and sprint planning to align technical tasks with business priorities'
-      ]
-    },
-    {
-      title: 'Software Engineer Intern',
-      company: 'Alliance Software Inc.',
-      period: 'Jan 2024 - May 2024',
-      achievements: [
-        'Designed and implemented a customer KYC flow for a money exchange app using React and TypeScript',
-        'Built a responsive exchange rate display screen with real-time updates via API integration',
-        'Rebuilt an Azure-based automation pipeline for dashboard data ingestion and transformation',
-        'Developed workflows and scheduled jobs to sync and visualize data for operational dashboards'
-      ]
-    }
-  ]
 
   const projects = [
     {
@@ -66,27 +26,24 @@ const Resume: React.FC = () => {
 
   const trainings = [
     {
-      name: 'Zuitt AWS Bootcamp',
-      subtitle: 'Cloud Architecture & Serverless Development',
+      name: 'Anthropic',
+      subtitle: 'Claude AI Fundamentals · Claude API & AI Integration',
       points: [
-        'Developed a strong grasp of AWS services including S3, EC2, Lambda, DynamoDB, and API Gateway',
-        'Delivered a capstone project integrating Lambda, DynamoDB, and API Gateway to build a scalable serverless backend'
-      ]
-    },
-    {
-      name: 'Zuitt Java Bootcamp',
-      subtitle: 'Advanced Backend Engineering',
-      points: [
-        'Built backend systems using Tomcat, Spring Boot, Maven, and Java EE',
-        'Strengthened backend security through JWT-based authentication and access control'
+        'LLM concepts, prompt design and responsible AI',
+        'Claude API tool use and production integration'
       ]
     },
     {
       name: 'Accenture Technology Academy',
       subtitle: 'Backend Development & DevOps Foundations',
+      points: ['Java Spring, JUnit/Mockito, Docker and CI/CD']
+    },
+    {
+      name: 'Zuitt Java & AWS Bootcamps',
+      subtitle: 'Backend Engineering · Cloud & Serverless',
       points: [
-        'Explored Java Spring ecosystem including JUnit, Mockito, Maven, and core Java principles',
-        'Gained hands-on experience with Docker for containerized development and deployment workflows'
+        'Spring Boot with JWT authentication and RBAC',
+        'Lambda, DynamoDB, API Gateway and S3; serverless capstone project'
       ]
     }
   ]
@@ -107,6 +64,9 @@ const Resume: React.FC = () => {
               <h1 className='mb-4 text-[3rem] font-bold text-dark-text lg:text-[4rem]'>
                 Mark Vincent A. Cueva
               </h1>
+              <p className='mb-2 text-[1.2rem] font-semibold text-primary'>
+                Senior Software Engineer · AI Engineering · Full-Stack TypeScript · ERP Integrations
+              </p>
               <p className='mb-8 text-[1.1rem] text-dark-text-secondary'>
                 cuevamarkvincent@gmail.com | +63 968 650 6973
               </p>
@@ -125,7 +85,7 @@ const Resume: React.FC = () => {
             <div className='mb-16'>
               <h2 className='mb-8 text-[2.5rem] font-bold text-dark-text'>Experience</h2>
               <div className='space-y-6'>
-                {experiences.map((exp, index) => (
+                {experienceData.map((exp, index) => (
                   <div
                     key={index}
                     className='group relative overflow-hidden rounded-2xl border border-glass-border bg-glass-gradient p-8 backdrop-blur-2xl transition-all duration-500 hover:border-primary/40 hover:shadow-glass-lg'
@@ -134,25 +94,37 @@ const Resume: React.FC = () => {
 
                     <div className='relative z-10 mb-4 flex flex-col justify-between gap-4 border-b border-glass-border pb-4 md:flex-row md:items-start'>
                       <div>
-                        <h3 className='mb-2 text-[1.5rem] font-bold text-dark-text'>{exp.title}</h3>
+                        <h3 className='mb-2 text-[1.5rem] font-bold text-dark-text'>{exp.position}</h3>
                         <p className='text-[1.2rem] font-semibold text-primary'>{exp.company}</p>
+                        {exp.highlight != null && <p className='mt-1 text-sm text-dark-text-secondary'>{exp.highlight}</p>}
                       </div>
-                      <div className='inline-flex items-center gap-2 rounded-lg border border-glass-border bg-glass-bg px-4 py-2 text-sm text-dark-text-secondary backdrop-blur-xl'>
+                      <div className='inline-flex shrink-0 items-center gap-2 self-start rounded-lg border border-glass-border bg-glass-bg px-4 py-2 text-sm text-dark-text-secondary backdrop-blur-xl'>
                         <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                           <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' />
                         </svg>
-                        {exp.period}
+                        {exp.date}
                       </div>
                     </div>
 
-                    <ul className='relative z-10 space-y-2 text-[0.95rem] leading-relaxed text-dark-text-secondary'>
-                      {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className='flex gap-3'>
-                          <span className='text-primary'>•</span>
-                          <span>{achievement}</span>
-                        </li>
+                    {[{ name: '', tagline: '', achievements: exp.achievements }, ...(exp.projects ?? [])]
+                      .filter((group) => group.achievements.length > 0)
+                      .map((group) => (
+                        <div key={group.name} className='relative z-10 mb-4 last:mb-0'>
+                          {group.name !== '' && (
+                            <p className='mb-2 text-[1rem] font-semibold text-dark-text'>
+                              {group.name} <span className='font-normal text-dark-text-secondary'>· {group.tagline}</span>
+                            </p>
+                          )}
+                          <ul className='space-y-2 text-[0.95rem] leading-relaxed text-dark-text-secondary'>
+                            {group.achievements.map((achievement, idx) => (
+                              <li key={idx} className='flex gap-3'>
+                                <span className='text-primary'>•</span>
+                                <span>{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
                   </div>
                 ))}
               </div>

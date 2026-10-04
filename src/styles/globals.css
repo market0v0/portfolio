@@ -116,3 +116,178 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 /* } */
+
+/* Hero backdrop: faint grid that fades out toward the edges */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(126, 49, 241, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(126, 49, 241, 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 30%, transparent 100%);
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(30px, -40px, 0) scale(1.1); }
+}
+
+.animate-orb {
+  animation: float-orb 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb { animation: none; }
+}
+
+/* Infinite tech marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* Cursor spotlight: cards with .spotlight glow where the pointer is.
+   --mx/--my are set by a single pointermove listener in frame.tsx. */
+.spotlight {
+  position: relative;
+}
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(126, 49, 241, 0.16), transparent 45%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+}
+
+/* Astronaut idle float (on top of its scroll-driven path) */
+@keyframes astro-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(6deg); }
+}
+.animate-astro-bob {
+  animation: astro-bob 6s ease-in-out infinite;
+}
+/* Slow wander so the astronaut never sits still, even without scrolling */
+@keyframes astro-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(38px, -26px) rotate(10deg); }
+  45% { transform: translate(-14px, -52px) rotate(-8deg); }
+  70% { transform: translate(-42px, -12px) rotate(14deg); }
+  85% { transform: translate(-10px, 18px) rotate(-4deg); }
+}
+.animate-astro-drift {
+  animation: astro-drift 18s ease-in-out infinite;
+}
+
+/* Limbs and details. SVG transform-origin values are in viewBox units. */
+.astro g, .astro path, .astro circle, .astro ellipse { transform-box: view-box; }
+.astro-arm-right { transform-origin: 86px 56px; animation: astro-wave 1.4s ease-in-out infinite; }
+.astro-arm-left { transform-origin: 36px 68px; animation: astro-sway 3.2s ease-in-out infinite; }
+.astro-leg-left { transform-origin: 47px 100px; animation: astro-kick 2.6s ease-in-out infinite; }
+.astro-leg-right { transform-origin: 73px 100px; animation: astro-kick 2.6s ease-in-out infinite reverse; }
+.astro-head { transform-origin: 60px 60px; animation: astro-look 5s ease-in-out infinite; }
+.astro-flame { transform-origin: 29px 102px; animation: astro-flame 0.18s ease-in-out infinite alternate; }
+.astro-flame-2 { transform-origin: 91px 102px; animation-delay: -0.09s; }
+.astro-antenna { animation: astro-blink 1.6s steps(1) infinite; }
+.astro-led { animation: astro-blink 1.1s steps(1) infinite; }
+.astro-led-2 { animation-delay: -0.35s; }
+.astro-led-3 { animation-delay: -0.7s; }
+
+@keyframes astro-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-38deg); }
+}
+@keyframes astro-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(18deg); }
+}
+@keyframes astro-kick {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(12deg); }
+}
+@keyframes astro-look {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-7deg); }
+  65% { transform: rotate(6deg); }
+}
+@keyframes astro-flame {
+  from { transform: scaleY(0.65); opacity: 0.7; }
+  to { transform: scaleY(1.15); opacity: 1; }
+}
+@keyframes astro-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-astro-bob, .animate-astro-drift,
+  .astro g, .astro path, .astro circle { animation: none !important; }
+}
+
+/* Astronaut reacting to the cursor */
+.astro-excited .astro-arm-right { animation-duration: 0.45s; }
+.astro-excited .astro-leg-left,
+.astro-excited .astro-leg-right { animation-duration: 0.9s; }
+.astro-excited .astro-flame { animation-name: astro-flame-big; }
+.astro-boost .astro-flame { animation-name: astro-flame-boost; animation-duration: 0.08s; }
+@keyframes astro-flame-big {
+  from { transform: scaleY(1); opacity: 0.85; }
+  to { transform: scaleY(1.7); opacity: 1; }
+}
+@keyframes astro-flame-boost {
+  from { transform: scaleY(1.8) scaleX(1.2); opacity: 0.9; }
+  to { transform: scaleY(2.6) scaleX(1.35); opacity: 1; }
+}
+
+/* Planets */
+@keyframes planet-float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-10px, -16px) rotate(3deg); }
+}
+.animate-planet-float {
+  animation: planet-float 16s ease-in-out infinite;
+}
+@keyframes planet-bands {
+  from { transform: translateX(0); }
+  to { transform: translateX(-160px); }
+}
+.planet-bands {
+  animation: planet-bands 30s linear infinite;
+}
+.planet-bands-slow {
+  animation-name: planet-bands-wide;
+  animation-duration: 45s;
+}
+@keyframes planet-bands-wide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-170px); }
+}
+.planet-orbit {
+  transform-box: view-box;
+  transform-origin: 150px 110px;
+  animation: planet-orbit 14s linear infinite;
+}
+@keyframes planet-orbit {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-planet-float, .planet-bands, .planet-orbit { animation: none; }
+}

@@ -62,30 +62,64 @@ export const projectsdata: ProjectData[] = [
     title: 'ONE BLOOD'
   }
 ]
+export interface ExperienceProject {
+  name: string
+  tagline: string
+  achievements: string[]
+}
+
 export interface ExperienceData {
   company: string
   position: string
   date: string
   location?: string
+  highlight?: string
+  metrics?: Array<{ value: string, label: string }>
   achievements: string[]
+  projects?: ExperienceProject[]
   technologies: string[]
 }
 
 export const experienceData: ExperienceData[] = [
   {
     company: 'Softype Inc.',
-    position: 'Software Engineer',
+    position: 'Software Engineer → Senior Software Engineer',
     date: 'Jan 2025 - Present',
     location: 'Cebu, Philippines',
-    achievements: [
-      'Reduced component redundancy by 35% through strategic unification, streamlining performance and system complexity',
-      'Architected and deployed seat selection system using T3 stack with optimized data fetching, handling 1000+ concurrent users',
-      'Implemented offline-first PWA with Service Workers and SQLite, enabling 100% feature availability without connectivity',
-      'Built customer and pitching portals that directly supported 3 major client demos, contributing to successful stakeholder engagement',
-      'Pioneered AI-assisted development workflow using Claude AI and prompt engineering, improving team productivity by 25%',
-      'Delivered actionable insights to management through data analysis, improving reporting clarity and decision-making speed'
+    highlight: 'Promoted to Senior in Apr 2026 (15 months)',
+    metrics: [
+      { value: '2', label: 'Production releases' },
+      { value: '65+', label: 'tRPC routers' },
+      { value: '35%', label: 'Faster booking' },
+      { value: '45+', label: 'Vitest suites' }
     ],
-    technologies: ['TypeScript', 'Next.js', 'T3 Stack', 'PWA', 'Service Workers', 'SQLite', 'Claude AI', 'AI Agents', 'Scrum', 'Jira']
+    achievements: [],
+    projects: [
+      {
+        name: 'Aquarius 2.0',
+        tagline: 'Multi-tenant maritime SaaS for freight, passage, gating and vessel operations. Live for a major Philippine shipping line.',
+        achievements: [
+          'Core engineer from the 2.0 build through production on a Next.js 15 / tRPC / Prisma / PostgreSQL platform; shipped Go-Live (Jul 2026) and Roll-Out 2 (Sep 2026)',
+          'Built the NetSuite two-way ERP sync with SuiteScript RESTlets for Sales Orders, Item Fulfillment, Customer Deposits and Refunds, mapping B/L → Sales Order and gating → fulfillment → auto-invoice with centavo-accurate totals',
+          'Owned billing-critical freight logic: revalidation, vessel swap, partial loading, B/L lifecycle with lock-based number generation, surcharge waivers, VAT and 7% withholding tax, and cash/cheque A/R routing',
+          'Built Maya/GCash payment webhooks with audit logging, plus customer-portal ID verification using OCR for PWD, Senior and driver\'s license IDs',
+          'Built finance reporting (summary, reconciliation with VATable/exempt split, Excel/CSV export, manifests, official receipts), voyage groups, connecting voyages and fleet seat layouts',
+          'AI-native development: wrote Claude Code subagents, project skills and slash commands; ran AI code review on PRs in CI and agent-driven conformance audits',
+          'Built a Playwright E2E regression suite (Page Object Models, per-role auth, NetSuite payload verification, idempotent seeding) on nightly GitHub Actions',
+          'Client-facing delivery: led the NetSuite Item Fulfillment demo, joined module demos and the 3-day Roll-Out 2 client demo, UAT, go-live support and admin retraining'
+        ]
+      },
+      {
+        name: 'SofTrack',
+        tagline: 'Internal Jira time-tracking and resource analytics platform.',
+        achievements: [
+          'Built event-driven Jira worklog sync with sync history, team webhooks, monthly approval workflow, category-trend analytics and an executive teams view',
+          'Added Redis caching for 60%+ fewer Jira API calls, fixed cross-timezone worklog bugs, and hardened CI with Neon branch databases and self-healing Prisma migrations',
+          'Automated internal reporting with GPT and LangChain RAG; presented a company Tech Talk on Claude Cowork + Rovo AI for Jira'
+        ]
+      }
+    ],
+    technologies: ['Next.js 15', 'TypeScript', 'tRPC', 'Prisma', 'PostgreSQL', 'NetSuite SuiteScript', 'Redis', 'Inngest', 'Vercel', 'Playwright', 'Vitest', 'Claude Code', 'LangChain']
   },
   {
     company: 'Ease Solutions',
@@ -93,13 +127,12 @@ export const experienceData: ExperienceData[] = [
     date: 'Jun 2024 - Dec 2024',
     location: 'Cebu, Philippines',
     achievements: [
-      'Enhanced custom Jira plugin dictionary feature used by 50+ enterprise clients, improving workflow efficiency',
-      'Optimized Spring API data fetching for tree and node operations, reducing load times by 40%',
-      'Developed comprehensive Selenium test suite covering 85% of UI components, reducing regression bugs by 60%',
-      'Contributed to 12 successful sprint deliveries as core Scrum team member, maintaining 95% on-time completion rate',
-      'Streamlined backlog grooming process by identifying and documenting technical dependencies, reducing planning time by 30%'
+      'Built a custom Jira plugin from scratch (Atlassian SDK) with dictionary-driven workflow automation that extends the Jira REST API',
+      'Set up client Jira environments: workflows, permission schemes and boards',
+      'Optimized Spring API fetching for tree/node views',
+      'Built a Selenium regression suite for CI/CD'
     ],
-    technologies: ['Spring Boot', 'Java', 'Selenium', 'Jira', 'Scrum']
+    technologies: ['Java', 'Spring Boot', 'Atlassian SDK', 'Jira REST API', 'Selenium']
   },
   {
     company: 'Alliance Software Inc.',
@@ -107,35 +140,40 @@ export const experienceData: ExperienceData[] = [
     date: 'Jan 2024 - May 2024',
     location: 'Cebu, Philippines',
     achievements: [
-      'Designed and launched customer KYC flow for money exchange app, processing 500+ user verifications monthly',
-      'Built real-time exchange rate display with live API integration, updating rates every 30 seconds for 10+ currencies',
-      'Rebuilt Azure automation pipeline handling 10GB+ daily data ingestion, improving reliability from 85% to 99%',
-      'Developed and deployed scheduled workflows syncing operational data across 5 dashboards, reducing manual effort by 80%'
+      'Built a KYC onboarding flow (React, TypeScript) with third-party identity-verification APIs, and a live exchange-rate display',
+      'Architected an Azure event-driven ETL pipeline and Power BI dashboards (SQL on Azure DevOps data) for sprint velocity, backlog aging and utilization'
     ],
-    technologies: ['React', 'TypeScript', 'Azure', 'REST APIs']
+    technologies: ['React', 'TypeScript', 'Azure', 'Power BI', 'SQL']
   }
 ]
 
 export const trainingsData = [
   {
+    img: '/skills/claude.svg',
+    label: 'Anthropic',
+    images: [],
+    date: 'Claude AI Fundamentals · Claude API & AI Integration',
+    body: 'LLM concepts, prompt design and responsible AI, plus production Claude API integration with tool use.'
+  },
+  {
     img: 'aws.svg',
     label: 'Zuitt AWS Bootcamp',
     images: [],
     date: 'Cloud Architecture & Serverless Development',
-    body: 'Developed a strong grasp of AWS services including S3, EC2, Lambda, DynamoDB, and API Gateway. Delivered a capstone project integrating Lambda, DynamoDB, and API Gateway to build a scalable serverless backend.'
+    body: 'Lambda, DynamoDB, API Gateway and S3. Delivered a serverless capstone integrating Lambda, DynamoDB and API Gateway.'
   },
   {
     img: 'javaee.svg',
     label: 'Zuitt Java Bootcamp',
     images: [],
     date: 'Advanced Backend Engineering',
-    body: 'Built backend systems using Tomcat, Spring Boot, Maven, and Java EE. Strengthened backend security through JWT-based authentication and access control.'
+    body: 'Built backend systems with Spring Boot, Maven and Java EE, secured with JWT authentication and RBAC.'
   },
   {
     img: 'ata.svg',
     label: 'Accenture Technology Academy',
     images: [],
     date: 'Backend Development & DevOps Foundations',
-    body: 'Explored Java Spring ecosystem including JUnit, Mockito, Maven, and core Java principles. Gained hands-on experience with Docker for containerized development and deployment workflows.'
+    body: 'Java Spring, JUnit/Mockito, Docker and CI/CD for containerized development and deployment workflows.'
   }
 ]

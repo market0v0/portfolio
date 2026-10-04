@@ -7,7 +7,7 @@ const ProjectCard: React.FC<ProjectData> = (projectSpec) => {
 
   return (
     <AnimatedSection>
-      <article className='group relative flex h-full flex-col overflow-hidden rounded-2xl border border-light-border  shadow-lg backdrop-blur-2xl transition-all duration-500 hover:border-primary/40 hover:shadow-glass-lg dark:border-glass-border dark:bg-glass-gradient dark:shadow-glass'>
+      <article className='spotlight group relative flex h-full flex-col overflow-hidden rounded-2xl border border-light-border  shadow-lg backdrop-blur-2xl transition-all duration-500 hover:border-primary/40 hover:shadow-glass-lg dark:border-glass-border dark:bg-glass-gradient dark:shadow-glass'>
         {/* Subtle outer glow on hover */}
         <div className='pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/15 via-purple-500/15 to-transparent opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-100' />
 

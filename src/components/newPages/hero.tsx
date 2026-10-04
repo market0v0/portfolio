@@ -1,14 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import NormalType from '../normalType'
+import CountUp from '../countUp'
+import TechMarquee from './techMarquee'
 import { scrollToSection } from '../utils'
 import ZoomSection from '../zoomANimation'
 
+const focusAreas = ['ERP integrations', 'AI-native workflows', 'billing-critical systems', 'full-stack TypeScript']
+
+const metrics = [
+  { value: '2.5+', label: 'Years Shipping' },
+  { value: '3', label: 'Companies' },
+  { value: '2026', label: 'SaaS Go-Live' },
+  { value: 'Senior', label: 'In 15 Months' }
+]
+
 const HeroFrame: React.FC = () => {
+  const [focusIndex, setFocusIndex] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setFocusIndex((i) => (i + 1) % focusAreas.length)
+    }, 2600)
+    return () => { clearInterval(id) }
+  }, [])
+
   return (
     <div className='relative flex min-h-screen justify-center overflow-hidden' id='hero'>
+      {/* Backdrop */}
+      <div className='hero-grid pointer-events-none absolute inset-0' />
+      <div className='animate-orb pointer-events-none absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-primary/20 blur-[100px]' />
+      <div className='animate-orb pointer-events-none absolute -right-24 bottom-1/4 h-80 w-80 rounded-full bg-purple-500/20 blur-[110px] [animation-delay:-7s]' />
       <div className='relative z-10 w-full max-w-6xl px-4'>
-        <div className='flex min-h-screen items-center justify-center'>
+        <div className='flex min-h-screen items-center justify-center pb-16 pt-32 lg:pt-36'>
           <section className='w-full max-w-4xl space-y-8 text-center'>
             <ZoomSection>
               <div className='space-y-6'>
@@ -20,43 +45,57 @@ const HeroFrame: React.FC = () => {
                       <span className='relative inline-flex h-3 w-3 rounded-full bg-primary'></span>
                     </div>
                     <span className='text-xs font-semibold text-primary sm:text-sm'>
-                      <span className='hidden sm:inline'>Open to Full-Time & Contract Opportunities</span>
+                      <span className='hidden sm:inline'>Senior Software Engineer · Open to Opportunities</span>
                       <span className='sm:hidden'>Open to Opportunities</span>
                     </span>
                   </div>
                 </div>
 
                 <h1 className='text-[2.5rem] font-bold leading-[1.1] tracking-tight text-light-text dark:text-dark-text lg:text-[4.5rem]'>
-                  <span className='block'>Full-Stack Engineer</span>
+                  <span className='block'>Senior Software Engineer</span>
                   <span className='block bg-gradient-to-r from-primary via-primary-light to-purple-400 bg-clip-text text-transparent'>
-                    Building AI-Powered Solutions
+                    Shipping Production SaaS
                   </span>
                 </h1>
 
-                <p className='mx-auto max-w-2xl text-[1.1rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary lg:text-[1.3rem] hidden md:block'>
+                <div className='flex flex-col items-center justify-center gap-2 text-[1.1rem] font-medium text-light-text dark:text-dark-text sm:flex-row sm:gap-3 lg:text-[1.35rem]'>
+                  <span>I build</span>
+                  {/* Fixed-size pill so the layout never jumps between phrases */}
+                  <span className='relative grid h-[2.4em] w-[15.5em] place-items-center overflow-hidden rounded-xl border border-primary/30 bg-primary/10 text-primary'>
+                    <AnimatePresence mode='wait' initial={false}>
+                      <motion.span
+                        key={focusAreas[focusIndex]}
+                        initial={{ y: 14, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -14, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                        className='whitespace-nowrap font-semibold'
+                      >
+                        {focusAreas[focusIndex]}
+                      </motion.span>
+                    </AnimatePresence>
+                  </span>
+                </div>
+
+                <p className='mx-auto hidden max-w-2xl text-[1.05rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary md:block lg:text-[1.2rem]'>
                   <NormalType
                     text={
-                      'Transforming ideas into production-ready applications with React, TypeScript, Spring Boot, and AI integration. 2+ years delivering scalable solutions for enterprise clients.'
+                      'Core engineer on a multi-tenant maritime SaaS now live for a major Philippine shipping line, owning its NetSuite ERP sync and freight billing logic.'
                     }
                   />
                 </p>
 
                 {/* Achievement Metrics */}
-                <div className='flex flex-wrap items-center justify-center gap-6 pt-4'>
-                  <div className='text-center'>
-                    <div className='text-[2rem] font-bold text-primary lg:text-[2.5rem]'>2+</div>
-                    <div className='text-sm text-light-text-secondary dark:text-dark-text-secondary'>Years Experience</div>
-                  </div>
-                  <div className='h-12 w-px bg-light-border dark:bg-glass-border' />
-                  <div className='text-center'>
-                    <div className='text-[2rem] font-bold text-primary lg:text-[2.5rem]'>3</div>
-                    <div className='text-sm text-light-text-secondary dark:text-dark-text-secondary'>Companies</div>
-                  </div>
-                  <div className='h-12 w-px bg-light-border dark:bg-glass-border' />
-                  <div className='text-center'>
-                    <div className='text-[2rem] font-bold text-primary lg:text-[2.5rem]'>15+</div>
-                    <div className='text-sm text-light-text-secondary dark:text-dark-text-secondary'>Projects Delivered</div>
-                  </div>
+                <div className='mx-auto grid max-w-3xl grid-cols-2 gap-3 pt-4 sm:grid-cols-4'>
+                  {metrics.map((metric) => (
+                    <div
+                      key={metric.label}
+                      className='spotlight rounded-2xl border border-light-border bg-white/50 px-4 py-4 shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow dark:border-glass-border dark:bg-glass-bg dark:shadow-none'
+                    >
+                      <div className='text-[1.6rem] font-bold text-primary lg:text-[2rem]'><CountUp value={metric.value} /></div>
+                      <div className='text-xs text-light-text-secondary dark:text-dark-text-secondary sm:text-sm'>{metric.label}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </ZoomSection>
@@ -87,24 +126,9 @@ const HeroFrame: React.FC = () => {
               </button>
             </div>
 
-            {/* Tech indicators */}
-            <div className='flex flex-wrap items-center justify-center gap-2 px-4 pt-8 sm:gap-3 sm:pt-12'>
-              {[
-                { name: 'React', highlight: false },
-                { name: 'TypeScript', highlight: false },
-                { name: 'Next.js', highlight: false },
-                { name: 'Spring Boot', highlight: false },
-                { name: 'AWS', highlight: false },
-                { name: 'Claude AI', highlight: true },
-                { name: 'AI Agents', highlight: true }
-              ].map((tech) => (
-                <div
-                  key={tech.name}
-                  className={`rounded-lg border px-3 py-1.5 text-xs backdrop-blur-xl transition-all sm:px-4 sm:py-2 sm:text-sm ${tech.highlight ? 'border-primary/40 bg-gradient-to-r from-primary/20 to-purple-500/20 font-semibold text-primary shadow-glow' : 'border-light-border bg-white/50 text-light-text-secondary shadow-lg hover:border-primary/30 dark:border-glass-border dark:bg-glass-bg dark:text-dark-text-secondary dark:shadow-none'}`}
-                >
-                  {tech.name}
-                </div>
-              ))}
+            {/* Tech marquee */}
+            <div className='mx-auto max-w-3xl pt-8 sm:pt-12'>
+              <TechMarquee />
             </div>
           </section>
         </div>

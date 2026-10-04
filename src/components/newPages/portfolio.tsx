@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import ProjectCard from './projectCard'
 import { projectsdata } from '@/pages/api/data'
-import ZoomSection from '../zoomANimation'
 
 const Portfolio: React.FC = () => {
   const sectionIds = ['pg1', 'pg2', 'pg3', 'pg4', 'pg5']
@@ -10,25 +9,21 @@ const Portfolio: React.FC = () => {
   return (
     <div className='py-20'>
       <div className='flex min-h-full flex-col items-center justify-center'>
-        <div className='mb-20 w-full max-w-6xl px-4'>
-          <ZoomSection>
-            <div className='text-center'>
-              <div className='mb-6 inline-block'>
-                <h2 className='mb-3 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-[3rem] font-bold text-transparent lg:text-[4rem]'>
-                  Projects by MARK
-                </h2>
-                <div className='mx-auto h-1 w-32 rounded-full bg-gradient-to-r from-primary via-purple-500 to-primary' />
-              </div>
-              <p className='mx-auto max-w-2xl text-[1.05rem] leading-relaxed text-light-text-secondary dark:text-dark-text-secondary'>
-                A curated showcase of my work featuring full-stack development, AI integration, and modern web technologies
-              </p>
-            </div>
-          </ZoomSection>
+        <div className='w-full max-w-6xl px-4'>
+          <div className='mb-16'>
+            <p className='mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary'>Side Projects</p>
+            <h2 className='mb-3 text-[2rem] font-semibold text-light-text dark:text-dark-text lg:text-[2.5rem]'>
+              Things I&apos;ve built
+            </h2>
+            <p className='text-[1.05rem] text-light-text-secondary dark:text-dark-text-secondary'>
+              Personal builds spanning AI integration, full-stack web and real-time systems
+            </p>
+          </div>
         </div>
 
         <div className='w-full max-w-7xl px-4'>
           {/* Project Cards with Side-by-Side Layout */}
-          <div className='space-y-40'>
+          <div className='space-y-24'>
             {sectionIds.map((sectionId, index) => {
               const isEven = index % 2 === 0
               return (
@@ -38,7 +33,7 @@ const Portfolio: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
-                  className='relative grid min-h-[70vh] items-center gap-8 lg:grid-cols-2'
+                  className='relative grid items-center gap-8 lg:grid-cols-2'
                   id={sectionId}
                 >
                   {/* Image on left for even, right for odd */}

@@ -15,6 +15,7 @@ const Skill: React.FC = () => {
     >
       <div className='w-full max-w-6xl px-4'>
         <div className='mb-16'>
+          <p className='mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary'>Toolkit</p>
           <h2 className='mb-3 text-[2rem] font-semibold text-light-text dark:text-dark-text lg:text-[2.5rem]'>
             Skills & Expertise
           </h2>
@@ -32,7 +33,7 @@ const Skill: React.FC = () => {
           <h3 className='mb-8 text-[1.5rem] font-semibold text-light-text dark:text-dark-text'>
             Training & Certifications
           </h3>
-          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+          <div className='grid gap-6 sm:grid-cols-2 xl:grid-cols-4'>
             {trainingsData.map((training, index) => (
               <Training
                 key={index}
