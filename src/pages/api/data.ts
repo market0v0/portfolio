@@ -26,6 +26,13 @@ export interface ProjectData {
 
 export const projectsdata: ProjectData[] = [
   {
+    img: '/projects/shipkit.svg',
+    tech: 'CLAUDE CODE - AI AGENTS - MCP - PLAYWRIGHT - GITHUB ACTIONS',
+    desc: 'Open-source Claude Code plugin that bundles AI agents and skills for shipping code safely. Includes a code-reviewer, an end-to-end test writer and a conformance auditor, plus skills for /ship, PR descriptions, Playwright E2E tests, building MCP servers and money-safe code. Ships with a GitHub Actions workflow for automated AI pull-request reviews. Install with /plugin marketplace add market0v0/shipkit.',
+    repository: 'https://github.com/market0v0/shipkit',
+    title: 'SHIPKIT'
+  },
+  {
     img: '/projects/bramk.svg',
     tech: 'REACT - NEXT.JS - MONGODB - NODE.JS - EXPRESS - LANGCHAIN',
     desc: 'AI-powered customer support platform serving 100+ daily inquiries with 95% accuracy. Integrated OpenAI GPT for intelligent responses and built comprehensive analytics dashboard tracking customer interactions, sentiment analysis, and support metrics. Led GPT integration research and implemented real-time data visualization features.',

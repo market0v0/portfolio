@@ -1,0 +1,51 @@
+<svg width="1171" height="941" viewBox="0 0 1171 941" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1171" y2="941" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#140A26"/>
+      <stop offset="1" stop-color="#05030B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(585 200) rotate(90) scale(460)">
+      <stop stop-color="#7E31F1" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7E31F1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rocket" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#C9A6FF"/>
+      <stop offset="1" stop-color="#7E31F1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1171" height="941" fill="url(#bg)"/>
+  <rect width="1171" height="941" fill="url(#glow)"/>
+
+  <!-- Content is kept inside the centre (x 285-885, y 120-820) so any card crop shows it -->
+
+  <!-- Rocket -->
+  <g transform="translate(549 120) scale(0.6)">
+    <path d="M60 0C96 30 112 78 112 130L112 196L8 196L8 130C8 78 24 30 60 0Z" fill="url(#rocket)"/>
+    <circle cx="60" cy="100" r="22" fill="#140A26" stroke="#E9DDFF" stroke-width="6"/>
+    <path d="M8 150L-24 210L8 200Z" fill="#7E31F1"/>
+    <path d="M112 150L144 210L112 200Z" fill="#7E31F1"/>
+    <path d="M36 204C36 240 60 270 60 270C60 270 84 240 84 204Z" fill="#FFB547"/>
+  </g>
+
+  <text x="585" y="358" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Helvetica, Arial, sans-serif" font-size="84" font-weight="800">Shipkit</text>
+  <text x="585" y="404" text-anchor="middle" fill="#C9A6FF" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="500">Claude Code plugin · AI agents · MCP</text>
+
+  <!-- Terminal window -->
+  <g transform="translate(285 440)">
+    <rect width="600" height="380" rx="22" fill="#0D0718" stroke="#7E31F1" stroke-opacity="0.5" stroke-width="2"/>
+    <rect width="600" height="50" rx="22" fill="#1A0F2E"/>
+    <rect y="28" width="600" height="22" fill="#1A0F2E"/>
+    <circle cx="34" cy="25" r="8" fill="#FF5F57"/>
+    <circle cx="60" cy="25" r="8" fill="#FEBC2E"/>
+    <circle cx="86" cy="25" r="8" fill="#28C840"/>
+    <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="21">
+      <text x="34" y="100" fill="#9A8AB8">$ <tspan fill="#E9DDFF">/plugin install shipkit@shipkit</tspan></text>
+      <text x="34" y="138" fill="#28C840">✓ <tspan fill="#E9DDFF">3 agents · 5 skills installed</tspan></text>
+      <text x="34" y="196" fill="#9A8AB8">$ <tspan fill="#E9DDFF">/ship</tspan></text>
+      <text x="34" y="236" fill="#C9A6FF">→ code-reviewer       <tspan fill="#28C840">passed</tspan></text>
+      <text x="34" y="272" fill="#C9A6FF">→ e2e-test-writer     <tspan fill="#28C840">12 tests</tspan></text>
+      <text x="34" y="308" fill="#C9A6FF">→ conformance-auditor <tspan fill="#28C840">clean</tspan></text>
+      <text x="34" y="352" fill="#FFB547">ready to ship</text>
+    </g>
+  </g>
+</svg>
